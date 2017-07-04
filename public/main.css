@@ -1,0 +1,66 @@
+body{
+  margin:0px;
+  background-color: #6F90A2;
+  color: #00362B;
+}
+
+.Nav {
+  float: right;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  display: inline-block;
+  background-color: #113B51;
+  height: 10vh;
+  font-size: 10px;
+}
+
+.Nav-Items {
+
+}
+.Footer {
+  height: 10vh;
+  background-color: #113B51;
+  cursor: pointer;
+}
+
+.app-body {
+  margin-top: 10vh;
+}
+
+.line-separator {
+  margin:auto;
+  height:1px;
+  width: 80%;
+  background:#717171;
+  border-bottom:1px solid white;
+}
+
+.header-seperator {
+  margin: auto;
+  width: 100%;
+  height: 3px;
+  background-color: #white;
+  border-bottom: 1px solid white;
+}
+
+.Home, .About, .Training, .Trainers, .Contact, .Facilities {
+  height: 60vh;
+  margin: auto;
+  padding: 5vh 20vh 20vh 20vh;
+  text-align: center;
+}
+
+.Nav-Table {
+  color: #6F90A2;
+  display: table-row;
+  text-align: center;
+  text-align: left;
+  font-size: 2em;
+  cursor:pointer;
+}
+
+td:hover {
+  color: #113B51;
+  background-color: #6F90A2;
+}

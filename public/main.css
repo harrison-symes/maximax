@@ -12,7 +12,8 @@ body{
   display: inline-block;
   background-color: #113B51;
   height: 10vh;
-  font-size: 10px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 .Nav-Items {
@@ -22,10 +23,21 @@ body{
   height: 10vh;
   background-color: #113B51;
   cursor: pointer;
+
 }
 
 .app-body {
   margin-top: 10vh;
+
+}
+
+.app-body h1 {
+  font-size: 4em;
+}
+
+.app-body p {
+  font-size: 2em;
+  margin: auto;
 }
 
 .line-separator {
@@ -36,14 +48,6 @@ body{
   border-bottom:1px solid white;
 }
 
-.header-seperator {
-  margin: auto;
-  width: 100%;
-  height: 3px;
-  background-color: #white;
-  border-bottom: 1px solid white;
-}
-
 .Home, .About, .Training, .Trainers, .Contact, .Facilities {
   height: 60vh;
   margin: auto;
@@ -51,16 +55,37 @@ body{
   text-align: center;
 }
 
+
+
+.Trainers img {
+  clear: left;
+}
+
+.Trainers p {
+  float: left;
+  padding: auto;
+}
+
+.Trainers h1 {
+  margin: auto;
+}
+
+.nav-icon {
+  margin-left: 20%;
+  font-size: 2em;
+  margin: auto;
+  text-align: left;
+}
+
 .Nav-Table {
   color: #6F90A2;
   display: table-row;
-  text-align: center;
-  text-align: left;
-  font-size: 2em;
   cursor:pointer;
+  margin: auto;
 }
 
 td:hover {
   color: #113B51;
   background-color: #6F90A2;
+  margin: 0 5vh 0 5vh;
 }

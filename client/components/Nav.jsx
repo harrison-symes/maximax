@@ -12,11 +12,19 @@ class Nav extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isMousedOver: false
+      showNav: false,
+      mouseOver: false
     }
   }
   toggleShow() {
-    this.setState({isMousedOver: !this.state.isMouseOver})
+    console.log("clicked");
+    this.setState({showNav: !this.state.showNav})
+  }
+  mouseOn() {
+    this.setState({mouseOver: true})
+  }
+  mouseOff() {
+    this.setState({mouseOver: false})
   }
   renderIcon() {
     return <p sclassName="nav-icon">&#9776;</p>
@@ -27,7 +35,7 @@ class Nav extends React.Component {
         <tr>
           <td onClick={(e) => scroll(e, 'Home')}>Home</td>
           <td onClick={(e) => scroll(e, 'About')}>About</td>
-          <td onClick={(e) => scroll(e, 'Trainers')}>Trainers</td>
+          <td onClick={(e) => scroll(e, 'Trainers')}>Trainer</td>
           <td onClick={(e) => scroll(e, 'Training')}>Training</td>
           <td onClick={(e) => scroll(e, 'Facilities')}>Facilities</td>
           <td onClick={(e) => scroll(e, 'Contact')}>Contact</td>
@@ -36,8 +44,12 @@ class Nav extends React.Component {
     </table>
   }
   render() {
-    return <div className="Nav" onClick={(e) => this.toggleShow()()} >
-      {this.state.isMouseOver
+    return <div
+      className="Nav"
+      onMouseOver={(e) => this.mouseOn()}
+      onMouseLeave={(e) => this.mouseOff()}
+      onClick={(e) => this.toggleShow()} >
+      {this.state.showNav || this.state.mouseOver
         ? this.renderNav()
         : this.renderIcon()
       }

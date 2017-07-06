@@ -12509,15 +12509,10 @@ var App = function App() {
         'div',
         { className: 'app-body' },
         _react2.default.createElement(_Home2.default, null),
-        _react2.default.createElement('div', { className: 'line-separator' }),
         _react2.default.createElement(_About2.default, null),
-        _react2.default.createElement('div', { className: 'line-separator' }),
         _react2.default.createElement(_Trainers2.default, null),
-        _react2.default.createElement('div', { className: 'line-separator' }),
         _react2.default.createElement(_Training2.default, null),
-        _react2.default.createElement('div', { className: 'line-separator' }),
         _react2.default.createElement(_Facilities2.default, null),
-        _react2.default.createElement('div', { className: 'line-separator' }),
         _react2.default.createElement(_Contact2.default, null)
       ),
       _react2.default.createElement(_Footer2.default, null)
@@ -12606,6 +12601,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(13);
 
+var _Referrals = __webpack_require__(275);
+
+var _Referrals2 = _interopRequireDefault(_Referrals);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var About = function About(_ref) {
@@ -12613,11 +12612,23 @@ var About = function About(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'About' },
+    _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',
       null,
       'About'
-    )
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Here is some text describing what we here at "unknown" are trying to achieve'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'We want to offer the best service and we can achieve it through a bunch of things that maybe are described here. We have had this success rating, and here are some references submitted by previous clients'
+    ),
+    _react2.default.createElement(_Referrals2.default, null)
   );
 };
 
@@ -12649,10 +12660,40 @@ var Contact = function Contact(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'Contact' },
+    _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',
       null,
       'Contact'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'Contact-Details' },
+      _react2.default.createElement(
+        'p',
+        null,
+        'If you wish to get in contact, call/email me with the information below, or come to check out our facilities and talk to me, face to face. We shall hear from you soon!'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Mobile: 027-934-4793'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Email: Symeshjb@gmail.com'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        '"Google Map Here"'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Address: 6 Baring Street, Oriental Bay Wellington (6011)'
+      )
     )
   );
 };
@@ -12678,17 +12719,76 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(13);
 
+var _jump = __webpack_require__(69);
+
+var _jump2 = _interopRequireDefault(_jump);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var scrollToContacts = function scrollToContacts() {
+  (0, _jump2.default)('.Contact', { offset: -20 });
+};
 
 var Facilities = function Facilities(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
     { className: 'Facilities' },
+    _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',
       null,
       'Faciltiies'
+    ),
+    _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' }),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Here is some sample text about the facilities, we have some very fine facilities here, and here are some facts about them: '
+    ),
+    _react2.default.createElement(
+      'ul',
+      null,
+      _react2.default.createElement(
+        'li',
+        null,
+        'Our'
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        'Equipment'
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        'Is'
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        'Sweaty'
+      )
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Why are our facilities the best? Because we have a location that is undisclosed as of yet, but I\'m sure that the location is great. We want to do a good job and be great and have a good reputation and all that stuff'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'If you wish to check out our facilities, refer to the',
+      _react2.default.createElement(
+        'a',
+        {
+          style: { color: 'blue', cursor: 'pointer' },
+          onClick: function onClick() {
+            return scrollToContacts();
+          } },
+        " Contact "
+      ),
+      'section below'
     )
   );
 };
@@ -12726,9 +12826,14 @@ var scroll = function scroll(e) {
 
 var Footer = function Footer(_ref) {
   var dispatch = _ref.dispatch;
-  return _react2.default.createElement('div', { className: 'Footer', onClick: function onClick(e) {
-      return scroll(e);
-    } });
+  return _react2.default.createElement(
+    'div',
+    { className: 'Footer', onClick: function onClick(e) {
+        return scroll(e);
+      } },
+    _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' }),
+    _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' })
+  );
 };
 
 var mapStateToProps = function mapStateToProps(state) {};
@@ -12795,10 +12900,17 @@ var Home = function Home(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'Home' },
+    _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',
       null,
-      'Home'
+      'Welcome'
+    ),
+    _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' }),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Welcome to my website. There is not going to be a whole lot of text here because most of this section should be occupied by a nice splash immage/banner, this is just an intro to the site/org'
     )
   );
 };
@@ -12854,7 +12966,8 @@ var Nav = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
 
     _this.state = {
-      isMousedOver: false
+      showNav: false,
+      mouseOver: false
     };
     return _this;
   }
@@ -12862,7 +12975,18 @@ var Nav = function (_React$Component) {
   _createClass(Nav, [{
     key: 'toggleShow',
     value: function toggleShow() {
-      this.setState({ isMousedOver: !this.state.isMouseOver });
+      console.log("clicked");
+      this.setState({ showNav: !this.state.showNav });
+    }
+  }, {
+    key: 'mouseOn',
+    value: function mouseOn() {
+      this.setState({ mouseOver: true });
+    }
+  }, {
+    key: 'mouseOff',
+    value: function mouseOff() {
+      this.setState({ mouseOver: false });
     }
   }, {
     key: 'renderIcon',
@@ -12904,7 +13028,7 @@ var Nav = function (_React$Component) {
               { onClick: function onClick(e) {
                   return scroll(e, 'Trainers');
                 } },
-              'Trainers'
+              'Trainer'
             ),
             _react2.default.createElement(
               'td',
@@ -12938,10 +13062,18 @@ var Nav = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'Nav', onClick: function onClick(e) {
-            return _this2.toggleShow()();
+        {
+          className: 'Nav',
+          onMouseOver: function onMouseOver(e) {
+            return _this2.mouseOn();
+          },
+          onMouseLeave: function onMouseLeave(e) {
+            return _this2.mouseOff();
+          },
+          onClick: function onClick(e) {
+            return _this2.toggleShow();
           } },
-        this.state.isMouseOver ? this.renderNav() : this.renderIcon()
+        this.state.showNav || this.state.mouseOver ? this.renderNav() : this.renderIcon()
       );
     }
   }]);
@@ -12975,6 +13107,7 @@ var Trainers = function Trainers(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'Trainers' },
+    _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',
       null,
@@ -13027,6 +13160,7 @@ var Training = function Training(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'Training' },
+    _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',
       null,
@@ -28625,6 +28759,106 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 275 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var referrals = [{
+  name: 'Jeff',
+  content: 'My nama Jeff'
+}, {
+  name: 'Harrison',
+  content: 'Very cool website!'
+}, {
+  name: 'Shaan Ingram',
+  content: 'My arms got so big!'
+}];
+
+var Referrals = function (_React$Component) {
+  _inherits(Referrals, _React$Component);
+
+  function Referrals(props) {
+    _classCallCheck(this, Referrals);
+
+    var _this = _possibleConstructorReturn(this, (Referrals.__proto__ || Object.getPrototypeOf(Referrals)).call(this, props));
+
+    _this.state = {
+      referrals: referrals,
+      currentReferral: referrals[Math.floor(Math.random() * referrals.length)]
+    };
+    return _this;
+  }
+
+  _createClass(Referrals, [{
+    key: 'shuffleRefferals',
+    value: function shuffleRefferals() {
+      var current = this.state.currentReferral;
+      var currentReferral = current;
+      while (current == currentReferral) {
+        currentReferral = referrals[Math.floor(Math.random() * referrals.length)];
+      }
+      this.setState({ currentReferral: currentReferral });
+    }
+  }, {
+    key: 'renderReferral',
+    value: function renderReferral() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'referral' },
+        _react2.default.createElement(
+          'p',
+          null,
+          this.state.currentReferral.content || 'No referral'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          '- ',
+          this.state.currentReferral.name
+        )
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'referrals', onClick: function onClick() {
+            return _this2.shuffleRefferals();
+          } },
+        this.renderReferral()
+      );
+    }
+  }]);
+
+  return Referrals;
+}(_react2.default.Component);
+
+exports.default = Referrals;
 
 /***/ })
 /******/ ]);

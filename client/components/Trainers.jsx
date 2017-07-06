@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 const Trainers = ({dispatch}) => (
   <div className="Trainers">
+    <div className="line-separator"></div>
     <h1>Trainer</h1>
     <h3>Max Symes</h3>
     <img src="http://placekitten.com/g/200/200"></img>

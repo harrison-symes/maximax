@@ -1,7 +1,7 @@
 body{
-  margin:0px;
   background-color: #6F90A2;
   color: #00362B;
+  margin: 0px;
 }
 
 .Nav {
@@ -14,21 +14,35 @@ body{
   height: 10vh;
   text-align: center;
   font-size: 1.5em;
+  text-overflow: clip;
+  cursor: alias;
+  opacity: 0.8;
 }
 
 .Nav-Items {
-
+  opacity: 1;
 }
+
 .Footer {
-  height: 10vh;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 7vh;
   background-color: #113B51;
   cursor: pointer;
+  opacity: 0.8;
+}
 
+.Footer img {
+  width: 5vh;
 }
 
 .app-body {
-  margin-top: 10vh;
-
+  margin-top: 20vh;
+  font-size-adjust: auto;
+  margin: auto;
+  align-items: flex-start;
+  min-width: 80%;
 }
 
 .app-body h1 {
@@ -36,9 +50,12 @@ body{
 }
 
 .app-body p {
-  font-size: 2em;
-  margin: auto;
+  font-size: 1.3em;
+  padding: 2.5vh auto;
+  overflow: inherit;
+  overflow: hidden;
 }
+
 
 .line-separator {
   margin:auto;
@@ -49,16 +66,24 @@ body{
 }
 
 .Home, .About, .Training, .Trainers, .Contact, .Facilities {
-  height: 60vh;
+  min-height: 72.5vh;
+  min-width: 60%;
+  max-width: 80%;
+  padding-top: 10vh;
+  height: auto;
   margin: auto;
-  padding: 5vh 20vh 20vh 20vh;
   text-align: center;
+  overflow: hidden;
 }
 
-
+.Home {
+  width: 100%;
+  height: 30vh;
+}
 
 .Trainers img {
   clear: left;
+  height: 20vh;
 }
 
 .Trainers p {
@@ -75,6 +100,8 @@ body{
   font-size: 2em;
   margin: auto;
   text-align: left;
+  align-content: space-around;
+  color: #113B51;
 }
 
 .Nav-Table {
@@ -82,10 +109,18 @@ body{
   display: table-row;
   cursor:pointer;
   margin: auto;
+  opacity: 0.95;
 }
 
 td:hover {
   color: #113B51;
   background-color: #6F90A2;
   margin: 0 5vh 0 5vh;
+  opacity: 1;
+}
+
+.Contact-Details {
+  max-width: 80%;
+  margin: auto;
+  padding-bottom: 15vh;
 }

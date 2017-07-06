@@ -15,15 +15,10 @@ const App = () => (
       <Header />
       <div className="app-body">
         <Home />
-        <div className="line-separator"></div>
         <About />
-        <div className="line-separator"></div>
         <Trainers />
-        <div className="line-separator"></div>
         <Training />
-        <div className="line-separator"></div>
         <Facilities />
-        <div className="line-separator"></div>
         <Contact />
       </div>
       <Footer />

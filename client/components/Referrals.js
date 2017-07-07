@@ -41,7 +41,7 @@ class Referrals extends React.Component {
   }
   render () {
     return (
-      <div className="referrals" onClick={() => this.shuffleRefferals()}>
+      <div className="referrals content" onClick={() => this.shuffleRefferals()}>
         {this.renderReferral()}
       </div>
     )

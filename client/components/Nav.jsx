@@ -12,7 +12,7 @@ class Nav extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      showNav: false,
+      showNav: true,
       mouseOver: false
     }
   }
@@ -27,7 +27,7 @@ class Nav extends React.Component {
     this.setState({mouseOver: false})
   }
   renderIcon() {
-    return <p sclassName="nav-icon">&#9776;</p>
+    return <p className="nav-icon">&#9776;</p>
   }
   renderNav() {
     return <table className="Nav-Table">

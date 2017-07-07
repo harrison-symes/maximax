@@ -41,8 +41,9 @@ body{
   margin-top: 20vh;
   font-size-adjust: auto;
   margin: auto;
-  align-items: flex-start;
+  margin-bottom: 15vh;
   min-width: 80%;
+  width: 100%;
 }
 
 .app-body h1 {
@@ -52,10 +53,31 @@ body{
 .app-body p {
   font-size: 1.3em;
   padding: 2.5vh auto;
-  overflow: inherit;
   overflow: hidden;
 }
 
+.content {
+  max-width: 70%;
+  text-align: center;
+  margin: auto;
+  margin-top: 5vh;
+  margin-bottom: 2.5vh;
+  border: .5vh solid white;
+  border-radius: 10px;
+  border-color: rgba(255,255,255, 0.7);
+  padding: 2.5vh;
+}
+
+.content ul {
+  list-style-type: none;
+  text-align: left;
+  margin-left: 40%;
+  font-size:
+}
+
+.content li:before {
+  content: "🏋️ - ";
+}
 
 .line-separator {
   margin:auto;
@@ -87,7 +109,6 @@ body{
 }
 
 .Trainers p {
-  float: left;
   padding: auto;
 }
 
@@ -101,10 +122,11 @@ body{
   margin: auto;
   text-align: left;
   align-content: space-around;
-  color: #113B51;
+  color: #6F90A2;
 }
 
 .Nav-Table {
+  margin-left: 20vw;
   color: #6F90A2;
   display: table-row;
   cursor:pointer;
@@ -118,6 +140,7 @@ td:hover {
   margin: 0 5vh 0 5vh;
   opacity: 1;
 }
+
 
 .Contact-Details {
   max-width: 80%;

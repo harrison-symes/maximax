@@ -9,8 +9,7 @@ const About = ({dispatch}) => (
     <div className="line-separator"></div>
     <h1>About</h1>
     <div className="content">
-      <p>Here is some text describing what we here at "unknown" are trying to achieve</p>
-      <p>We want to offer the best service and we can achieve it through a bunch of things that maybe are described here. We have had this success rating, and here are some references submitted by previous clients</p>
+      <p>My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym. I routinely search the evidence for optimal exercise methods and interventions for each client or problem. Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise. I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you’re moving efficiently.</p>
     </div>
     <Referrals />
   </div>

@@ -1,7 +1,20 @@
-body{
-  background-color: #6F90A2;
-  color: #00362B;
+/*colours
+  light white: #EBEBEC
+  dark white: #C3C5C7
+  light grey: #9B9FA2
+  mid grey: #73787D
+  DARK GREY: #4B5258
+  black: #232C33
+*/
+pre {
+	font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+body {
+  background-color: #EBEBEC;
+  color: #232C33;
   margin: 0px;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
 .Nav {
@@ -10,13 +23,13 @@ body{
   position: fixed;
   top: 0px;
   display: inline-block;
-  background-color: #113B51;
-  height: 10vh;
+  background-color: #73787D;
+  min-height: 10vh;
   text-align: center;
   font-size: 1.5em;
   text-overflow: clip;
   cursor: alias;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .Nav-Items {
@@ -24,13 +37,13 @@ body{
 }
 
 .Footer {
+	opacity: 0.7;
   position: fixed;
   bottom: 0px;
   width: 100%;
   height: 7vh;
-  background-color: #113B51;
+  background-color: #73787D;
   cursor: pointer;
-  opacity: 0.8;
 }
 
 .Footer img {
@@ -64,15 +77,23 @@ body{
   margin-bottom: 2.5vh;
   border: .5vh solid white;
   border-radius: 10px;
-  border-color: rgba(255,255,255, 0.7);
+  border-color: rgba(195,197,199, 0.7);
+  color: #232C33;
   padding: 2.5vh;
+	box-shadow: 0px 0px 10px #C3C5C7;
+	overflow: hidden;
+}
+
+.content:hover {
+  background-color: #C3C5C7;
+  border-color: rgba(255,255,255, 0.7);
+  box-shadow: 0 0 5px #C3C5C7;
 }
 
 .content ul {
   list-style-type: none;
   text-align: left;
   margin-left: 40%;
-  font-size:
 }
 
 .content li:before {
@@ -81,18 +102,28 @@ body{
 
 .line-separator {
   margin:auto;
-  height:1px;
-  width: 80%;
-  background:#717171;
+  height:.5vh;
+  width: 100%;
+  background:#232C33;
   border-bottom:1px solid white;
 }
 
-.Home, .About, .Training, .Trainers, .Contact, .Facilities {
+.line-separator-bottom {
+  margin:auto;
+  margin-bottom: 7vh;
+  margin-top: 0px;
+  text-align: center;
+  height: .5vh;
+  width: 80%;
+  background: #232C33;
+  border-bottom: 1px solid white;
+}
+
+.Home, .About, .Training, .Trainer, .Contact, .Facilities {
   min-height: 72.5vh;
   min-width: 60%;
   max-width: 80%;
   padding-top: 10vh;
-  height: auto;
   margin: auto;
   text-align: center;
   overflow: hidden;
@@ -103,16 +134,12 @@ body{
   height: 30vh;
 }
 
-.Trainers img {
+.Trainer img {
   clear: left;
   height: 20vh;
 }
 
-.Trainers p {
-  padding: auto;
-}
-
-.Trainers h1 {
+.Trainer h1 {
   margin: auto;
 }
 
@@ -120,23 +147,37 @@ body{
   margin-left: 20%;
   font-size: 2em;
   margin: auto;
-  text-align: left;
   align-content: space-around;
-  color: #6F90A2;
+  color: #232C33;
 }
 
 .Nav-Table {
-  margin-left: 20vw;
-  color: #6F90A2;
-  display: table-row;
+  color: #232C33;
   cursor:pointer;
   margin: auto;
   opacity: 0.95;
+  width: 80%;
 }
 
+tr {
+	align-items: center;
+}
+
+td {
+	opacity: 1;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  width: 5vw;
+  height: 5vh;
+  font-size: 1em;
+  max-height: 10vh;
+  text-align: center;
+}
+
+
 td:hover {
-  color: #113B51;
-  background-color: #6F90A2;
+  color: #EBEBEC;
+  background-color: #4B5258;
   margin: 0 5vh 0 5vh;
   opacity: 1;
 }

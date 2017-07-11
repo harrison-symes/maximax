@@ -20,7 +20,9 @@ const App = () => (
         <Training />
         <Facilities />
         <Contact />
+
       </div>
+      <div className="line-separator-bottom"></div>
       <Footer />
     </div>
   </Router>

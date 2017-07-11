@@ -33,7 +33,7 @@ class Referrals extends React.Component {
   }
   renderReferral() {
     return (
-      <div className="referral">
+      <div style={{cursor: 'pointer'}} className="referral">
         <p>{this.state.currentReferral.content || 'No referral'}</p>
         <p>- {this.state.currentReferral.name}</p>
       </div>

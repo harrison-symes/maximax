@@ -5,7 +5,7 @@ import jump from 'jump.js'
 
 const scroll = (e, name) => {
   console.log("jump", name);
-  jump(`.${name}`, {offset: -35})
+  jump(`.${name}`, {offset: 0})
 }
 
 class Nav extends React.Component {
@@ -35,7 +35,7 @@ class Nav extends React.Component {
         <tr>
           <td onClick={(e) => scroll(e, 'Home')}>Home</td>
           <td onClick={(e) => scroll(e, 'About')}>About</td>
-          <td onClick={(e) => scroll(e, 'Trainers')}>Trainer</td>
+          <td onClick={(e) => scroll(e, 'Trainer')}>Trainer</td>
           <td onClick={(e) => scroll(e, 'Training')}>Training</td>
           <td onClick={(e) => scroll(e, 'Facilities')}>Facilities</td>
           <td onClick={(e) => scroll(e, 'Contact')}>Contact</td>

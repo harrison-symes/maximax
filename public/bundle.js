@@ -12515,6 +12515,7 @@ var App = function App() {
         _react2.default.createElement(_Facilities2.default, null),
         _react2.default.createElement(_Contact2.default, null)
       ),
+      _react2.default.createElement('div', { className: 'line-separator-bottom' }),
       _react2.default.createElement(_Footer2.default, null)
     )
   );
@@ -12624,12 +12625,7 @@ var About = function About(_ref) {
       _react2.default.createElement(
         'p',
         null,
-        'Here is some text describing what we here at "unknown" are trying to achieve'
-      ),
-      _react2.default.createElement(
-        'p',
-        null,
-        'We want to offer the best service and we can achieve it through a bunch of things that maybe are described here. We have had this success rating, and here are some references submitted by previous clients'
+        'My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym. I routinely search the evidence for optimal exercise methods and interventions for each client or problem. Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise. I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you\u2019re moving efficiently.'
       )
     ),
     _react2.default.createElement(_Referrals2.default, null)
@@ -12676,27 +12672,31 @@ var Contact = function Contact(_ref) {
       _react2.default.createElement(
         'p',
         null,
-        'If you wish to get in contact, call/email me with the information below, or come to check out our facilities and talk to me, face to face. We shall hear from you soon!'
+        'For More information on training with me at Les Mills Dunedin, please use the following contact addresses:'
       ),
       _react2.default.createElement(
-        'p',
+        'ul',
         null,
-        'Mobile: 027-934-4793'
-      ),
-      _react2.default.createElement(
-        'p',
-        null,
-        'Email: Symeshjb@gmail.com'
+        _react2.default.createElement(
+          'li',
+          null,
+          'Mobile: 027 445 3965'
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          'Email: maxsymes@hotmail.com'
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          'Address: Les Mills, 10/12 Dowling St, Dunedin, 9016'
+        )
       ),
       _react2.default.createElement(
         'p',
         null,
         '"Google Map Here"'
-      ),
-      _react2.default.createElement(
-        'p',
-        null,
-        'Address: 6 Baring Street, Oriental Bay Wellington (6011)'
       )
     )
   );
@@ -12908,7 +12908,7 @@ var _jump2 = _interopRequireDefault(_jump);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var jumpDown = function jumpDown() {
-  (0, _jump2.default)('.About', { offset: -20 });
+  (0, _jump2.default)('.About', { offset: 0 });
 };
 
 var Home = function Home(_ref) {
@@ -12922,7 +12922,6 @@ var Home = function Home(_ref) {
       null,
       'Welcome'
     ),
-    _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' }),
     _react2.default.createElement(
       'div',
       { className: 'content' },
@@ -12933,11 +12932,11 @@ var Home = function Home(_ref) {
       )
     ),
     _react2.default.createElement(
-      'h1',
-      { onClick: function onClick() {
+      'p',
+      { style: { cursor: 'pointer' }, onClick: function onClick() {
           return jumpDown();
         } },
-      '\u25BC'
+      '\u2186'
     )
   );
 };
@@ -12981,7 +12980,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var scroll = function scroll(e, name) {
   console.log("jump", name);
-  (0, _jump2.default)('.' + name, { offset: -35 });
+  (0, _jump2.default)('.' + name, { offset: 0 });
 };
 
 var Nav = function (_React$Component) {
@@ -13053,7 +13052,7 @@ var Nav = function (_React$Component) {
             _react2.default.createElement(
               'td',
               { onClick: function onClick(e) {
-                  return scroll(e, 'Trainers');
+                  return scroll(e, 'Trainer');
                 } },
               'Trainer'
             ),
@@ -13176,7 +13175,7 @@ var Referrals = function (_React$Component) {
     value: function renderReferral() {
       return _react2.default.createElement(
         'div',
-        { className: 'referral' },
+        { style: { cursor: 'pointer' }, className: 'referral' },
         _react2.default.createElement(
           'p',
           null,
@@ -13233,7 +13232,7 @@ var Trainers = function Trainers(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'Trainers' },
+    { className: 'Trainer' },
     _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',
@@ -13253,11 +13252,6 @@ var Trainers = function Trainers(_ref) {
         'p',
         null,
         'I received my Honour\u2019s degree in Physical Education with a concentration in Exercise Prescription through the University of Otago. In addition to being a Les Mills Personal Trainer, I have worked as Strength & Conditioning Intern for the Pulse Energy Highlanders (2017) as well as a tutor at the University of Otago.'
-      ),
-      _react2.default.createElement(
-        'p',
-        null,
-        'My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym. I routinely search the evidence for optimal exercise methods and interventions for each client or problem. Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise. I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you\u2019re moving efficiently'
       )
     )
   );
@@ -13284,7 +13278,15 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(13);
 
+var _jump = __webpack_require__(32);
+
+var _jump2 = _interopRequireDefault(_jump);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var scrollToContacts = function scrollToContacts() {
+  (0, _jump2.default)('.Contact', { offset: 0 });
+};
 
 var Training = function Training(_ref) {
   var dispatch = _ref.dispatch;
@@ -13301,9 +13303,28 @@ var Training = function Training(_ref) {
       'div',
       { className: 'content' },
       _react2.default.createElement(
-        'p',
+        'h3',
         null,
-        'Here at no name, we like to do a lot of training, personal training. Here are some steps and things that we focus on when it comes to our training process'
+        'In person training @ Les Mills, Dunedin:'
+      ),
+      _react2.default.createElement(
+        'h4',
+        null,
+        'Sessions start at $30 for 30min.'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'content' },
+      _react2.default.createElement(
+        'h2',
+        null,
+        'Online Coaching:'
+      ),
+      _react2.default.createElement(
+        'h4',
+        null,
+        'To get started with online coaching...'
       ),
       _react2.default.createElement(
         'ul',
@@ -13311,23 +13332,58 @@ var Training = function Training(_ref) {
         _react2.default.createElement(
           'li',
           null,
-          'Lifting'
+          'get in',
+          _react2.default.createElement(
+            'a',
+            {
+              style: { color: 'blue', cursor: 'pointer' },
+              onClick: function onClick() {
+                return scrollToContacts();
+              } },
+            " Contact "
+          ),
+          'with me!'
         ),
         _react2.default.createElement(
           'li',
           null,
-          'Leg Day'
+          'To kick off, I\u2019ll send through a comprehensive questionnaire, addressing everything from your training history, injury history, goals, and time commitment towards training.'
         ),
         _react2.default.createElement(
           'li',
           null,
-          'Arm Day'
+          'I\u2019ll provide you with monthly programming that is specific to you. I\u2019m not going to handout cookie-cutter programmes; I\u2019m better than that. Each programme addressing warm-up, foam-rolling, mobility, strength,power,speed, muscles gain, and prehab/rehabilitation.'
         )
       ),
       _react2.default.createElement(
         'p',
         null,
-        'Conclusive information about the training just described and why it is the best training regime imaginable, hahahahahah'
+        'The first month of programming is $80, which will cover your assessment and paperwork. For all other subsequent months, the cost will be ',
+        _react2.default.createElement(
+          'h3',
+          null,
+          '$60 per month'
+        ),
+        '.'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'content' },
+      _react2.default.createElement(
+        'p',
+        null,
+        'For More information on training with me at Les Mills Dunedin, please refer to the',
+        _react2.default.createElement(
+          'a',
+          {
+            style: { color: 'blue', cursor: 'pointer' },
+            onClick: function onClick() {
+              return scrollToContacts();
+            } },
+          " Contact "
+        ),
+        'section at the bottom of the page.'
       )
     )
   );

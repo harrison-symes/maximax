@@ -34,10 +34,9 @@ class Nav extends React.Component {
       <tbody>
         <tr>
           <td onClick={(e) => scroll(e, 'Home')}>Home</td>
-          <td onClick={(e) => scroll(e, 'About')}>About</td>
           <td onClick={(e) => scroll(e, 'Trainer')}>Trainer</td>
+          <td onClick={(e) => scroll(e, 'About')}>About</td>
           <td onClick={(e) => scroll(e, 'Training')}>Training</td>
-          <td onClick={(e) => scroll(e, 'Facilities')}>Facilities</td>
           <td onClick={(e) => scroll(e, 'Contact')}>Contact</td>
         </tr>
       </tbody>

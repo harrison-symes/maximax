@@ -3257,6 +3257,181 @@ module.exports = invariant;
 
 /***/ }),
 /* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+// Robert Penner's easeInOutQuad
+
+// find the rest of his easing functions here: http://robertpenner.com/easing/
+// find them exported for ES6 consumption here: https://github.com/jaxgeller/ez.js
+
+var easeInOutQuad = function easeInOutQuad(t, b, c, d) {
+  t /= d / 2;
+  if (t < 1) return c / 2 * t * t + b;
+  t--;
+  return -c / 2 * (t * (t - 2) - 1) + b;
+};
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+var jumper = function jumper() {
+  // private variable cache
+  // no variables are created during a jump, preventing memory leaks
+
+  var element = void 0; // element to scroll to                   (node)
+
+  var start = void 0; // where scroll starts                    (px)
+  var stop = void 0; // where scroll stops                     (px)
+
+  var offset = void 0; // adjustment from the stop position      (px)
+  var easing = void 0; // easing function                        (function)
+  var a11y = void 0; // accessibility support flag             (boolean)
+
+  var distance = void 0; // distance of scroll                     (px)
+  var duration = void 0; // scroll duration                        (ms)
+
+  var timeStart = void 0; // time scroll started                    (ms)
+  var timeElapsed = void 0; // time spent scrolling thus far          (ms)
+
+  var next = void 0; // next scroll position                   (px)
+
+  var callback = void 0; // to call when done scrolling            (function)
+
+  // scroll position helper
+
+  function location() {
+    return window.scrollY || window.pageYOffset;
+  }
+
+  // element offset helper
+
+  function top(element) {
+    return element.getBoundingClientRect().top + start;
+  }
+
+  // rAF loop helper
+
+  function loop(timeCurrent) {
+    // store time scroll started, if not started already
+    if (!timeStart) {
+      timeStart = timeCurrent;
+    }
+
+    // determine time spent scrolling so far
+    timeElapsed = timeCurrent - timeStart;
+
+    // calculate next scroll position
+    next = easing(timeElapsed, start, distance, duration);
+
+    // scroll to it
+    window.scrollTo(0, next);
+
+    // check progress
+    timeElapsed < duration ? window.requestAnimationFrame(loop) // continue scroll loop
+    : done(); // scrolling is done
+  }
+
+  // scroll finished helper
+
+  function done() {
+    // account for rAF time rounding inaccuracies
+    window.scrollTo(0, start + distance);
+
+    // if scrolling to an element, and accessibility is enabled
+    if (element && a11y) {
+      // add tabindex indicating programmatic focus
+      element.setAttribute('tabindex', '-1');
+
+      // focus the element
+      element.focus();
+    }
+
+    // if it exists, fire the callback
+    if (typeof callback === 'function') {
+      callback();
+    }
+
+    // reset time for next jump
+    timeStart = false;
+  }
+
+  // API
+
+  function jump(target) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    // resolve options, or use defaults
+    duration = options.duration || 1000;
+    offset = options.offset || 0;
+    callback = options.callback; // "undefined" is a suitable default, and won't be called
+    easing = options.easing || easeInOutQuad;
+    a11y = options.a11y || false;
+
+    // cache starting position
+    start = location();
+
+    // resolve target
+    switch (typeof target === 'undefined' ? 'undefined' : _typeof(target)) {
+      // scroll from current position
+      case 'number':
+        element = undefined; // no element to scroll to
+        a11y = false; // make sure accessibility is off
+        stop = start + target;
+        break;
+
+      // scroll to element (node)
+      // bounding rect is relative to the viewport
+      case 'object':
+        element = target;
+        stop = top(element);
+        break;
+
+      // scroll to element (selector)
+      // bounding rect is relative to the viewport
+      case 'string':
+        element = document.querySelector(target);
+        stop = top(element);
+        break;
+    }
+
+    // resolve scroll distance, accounting for offset
+    distance = stop - start + offset;
+
+    // resolve duration
+    switch (_typeof(options.duration)) {
+      // number in ms
+      case 'number':
+        duration = options.duration;
+        break;
+
+      // function passed the distance of the scroll
+      case 'function':
+        duration = options.duration(distance);
+        break;
+    }
+
+    // start the loop
+    window.requestAnimationFrame(loop);
+  }
+
+  // expose only the jump method
+  return jump;
+};
+
+// export singleton
+
+var singleton = jumper();
+
+/* harmony default export */ __webpack_exports__["default"] = (singleton);
+
+
+/***/ }),
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3536,7 +3711,7 @@ module.exports = EventPluginHub;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3552,7 +3727,7 @@ module.exports = EventPluginHub;
 
 
 
-var EventPluginHub = __webpack_require__(27);
+var EventPluginHub = __webpack_require__(28);
 var EventPluginUtils = __webpack_require__(48);
 
 var accumulateInto = __webpack_require__(86);
@@ -3676,7 +3851,7 @@ module.exports = EventPropagators;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3727,7 +3902,7 @@ var ReactInstanceMap = {
 module.exports = ReactInstanceMap;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3791,7 +3966,7 @@ SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 module.exports = SyntheticUIEvent;
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3815,181 +3990,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 32 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-// Robert Penner's easeInOutQuad
-
-// find the rest of his easing functions here: http://robertpenner.com/easing/
-// find them exported for ES6 consumption here: https://github.com/jaxgeller/ez.js
-
-var easeInOutQuad = function easeInOutQuad(t, b, c, d) {
-  t /= d / 2;
-  if (t < 1) return c / 2 * t * t + b;
-  t--;
-  return -c / 2 * (t * (t - 2) - 1) + b;
-};
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
-  return typeof obj;
-} : function (obj) {
-  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-};
-
-var jumper = function jumper() {
-  // private variable cache
-  // no variables are created during a jump, preventing memory leaks
-
-  var element = void 0; // element to scroll to                   (node)
-
-  var start = void 0; // where scroll starts                    (px)
-  var stop = void 0; // where scroll stops                     (px)
-
-  var offset = void 0; // adjustment from the stop position      (px)
-  var easing = void 0; // easing function                        (function)
-  var a11y = void 0; // accessibility support flag             (boolean)
-
-  var distance = void 0; // distance of scroll                     (px)
-  var duration = void 0; // scroll duration                        (ms)
-
-  var timeStart = void 0; // time scroll started                    (ms)
-  var timeElapsed = void 0; // time spent scrolling thus far          (ms)
-
-  var next = void 0; // next scroll position                   (px)
-
-  var callback = void 0; // to call when done scrolling            (function)
-
-  // scroll position helper
-
-  function location() {
-    return window.scrollY || window.pageYOffset;
-  }
-
-  // element offset helper
-
-  function top(element) {
-    return element.getBoundingClientRect().top + start;
-  }
-
-  // rAF loop helper
-
-  function loop(timeCurrent) {
-    // store time scroll started, if not started already
-    if (!timeStart) {
-      timeStart = timeCurrent;
-    }
-
-    // determine time spent scrolling so far
-    timeElapsed = timeCurrent - timeStart;
-
-    // calculate next scroll position
-    next = easing(timeElapsed, start, distance, duration);
-
-    // scroll to it
-    window.scrollTo(0, next);
-
-    // check progress
-    timeElapsed < duration ? window.requestAnimationFrame(loop) // continue scroll loop
-    : done(); // scrolling is done
-  }
-
-  // scroll finished helper
-
-  function done() {
-    // account for rAF time rounding inaccuracies
-    window.scrollTo(0, start + distance);
-
-    // if scrolling to an element, and accessibility is enabled
-    if (element && a11y) {
-      // add tabindex indicating programmatic focus
-      element.setAttribute('tabindex', '-1');
-
-      // focus the element
-      element.focus();
-    }
-
-    // if it exists, fire the callback
-    if (typeof callback === 'function') {
-      callback();
-    }
-
-    // reset time for next jump
-    timeStart = false;
-  }
-
-  // API
-
-  function jump(target) {
-    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-    // resolve options, or use defaults
-    duration = options.duration || 1000;
-    offset = options.offset || 0;
-    callback = options.callback; // "undefined" is a suitable default, and won't be called
-    easing = options.easing || easeInOutQuad;
-    a11y = options.a11y || false;
-
-    // cache starting position
-    start = location();
-
-    // resolve target
-    switch (typeof target === 'undefined' ? 'undefined' : _typeof(target)) {
-      // scroll from current position
-      case 'number':
-        element = undefined; // no element to scroll to
-        a11y = false; // make sure accessibility is off
-        stop = start + target;
-        break;
-
-      // scroll to element (node)
-      // bounding rect is relative to the viewport
-      case 'object':
-        element = target;
-        stop = top(element);
-        break;
-
-      // scroll to element (selector)
-      // bounding rect is relative to the viewport
-      case 'string':
-        element = document.querySelector(target);
-        stop = top(element);
-        break;
-    }
-
-    // resolve scroll distance, accounting for offset
-    distance = stop - start + offset;
-
-    // resolve duration
-    switch (_typeof(options.duration)) {
-      // number in ms
-      case 'number':
-        duration = options.duration;
-        break;
-
-      // function passed the distance of the scroll
-      case 'function':
-        duration = options.duration(distance);
-        break;
-    }
-
-    // start the loop
-    window.requestAnimationFrame(loop);
-  }
-
-  // expose only the jump method
-  return jump;
-};
-
-// export singleton
-
-var singleton = jumper();
-
-/* harmony default export */ __webpack_exports__["default"] = (singleton);
-
 
 /***/ }),
 /* 33 */
@@ -4596,7 +4596,7 @@ module.exports = ReactBrowserEventEmitter;
 
 
 
-var SyntheticUIEvent = __webpack_require__(30);
+var SyntheticUIEvent = __webpack_require__(31);
 var ViewportMetrics = __webpack_require__(85);
 
 var getEventModifierState = __webpack_require__(56);
@@ -6379,7 +6379,7 @@ module.exports = ReactErrorUtils;
 var _prodInvariant = __webpack_require__(3);
 
 var ReactCurrentOwner = __webpack_require__(15);
-var ReactInstanceMap = __webpack_require__(29);
+var ReactInstanceMap = __webpack_require__(30);
 var ReactInstrumentation = __webpack_require__(11);
 var ReactUpdates = __webpack_require__(14);
 
@@ -9453,14 +9453,14 @@ var ReactDOMComponentTree = __webpack_require__(6);
 var ReactDOMContainerInfo = __webpack_require__(170);
 var ReactDOMFeatureFlags = __webpack_require__(172);
 var ReactFeatureFlags = __webpack_require__(79);
-var ReactInstanceMap = __webpack_require__(29);
+var ReactInstanceMap = __webpack_require__(30);
 var ReactInstrumentation = __webpack_require__(11);
 var ReactMarkupChecksum = __webpack_require__(192);
 var ReactReconciler = __webpack_require__(22);
 var ReactUpdateQueue = __webpack_require__(53);
 var ReactUpdates = __webpack_require__(14);
 
-var emptyObject = __webpack_require__(31);
+var emptyObject = __webpack_require__(32);
 var instantiateReactComponent = __webpack_require__(91);
 var invariant = __webpack_require__(1);
 var setInnerHTML = __webpack_require__(38);
@@ -11534,7 +11534,7 @@ var _prodInvariant = __webpack_require__(24),
 var ReactNoopUpdateQueue = __webpack_require__(105);
 
 var canDefineProperty = __webpack_require__(39);
-var emptyObject = __webpack_require__(31);
+var emptyObject = __webpack_require__(32);
 var invariant = __webpack_require__(1);
 var lowPriorityWarning = __webpack_require__(64);
 
@@ -12509,10 +12509,9 @@ var App = function App() {
         'div',
         { className: 'app-body' },
         _react2.default.createElement(_Home2.default, null),
-        _react2.default.createElement(_About2.default, null),
         _react2.default.createElement(_Trainers2.default, null),
+        _react2.default.createElement(_About2.default, null),
         _react2.default.createElement(_Training2.default, null),
-        _react2.default.createElement(_Facilities2.default, null),
         _react2.default.createElement(_Contact2.default, null)
       ),
       _react2.default.createElement('div', { className: 'line-separator-bottom' }),
@@ -12723,7 +12722,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(13);
 
-var _jump = __webpack_require__(32);
+var _jump = __webpack_require__(27);
 
 var _jump2 = _interopRequireDefault(_jump);
 
@@ -12822,7 +12821,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(13);
 
-var _jump = __webpack_require__(32);
+var _jump = __webpack_require__(27);
 
 var _jump2 = _interopRequireDefault(_jump);
 
@@ -12901,7 +12900,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(13);
 
-var _jump = __webpack_require__(32);
+var _jump = __webpack_require__(27);
 
 var _jump2 = _interopRequireDefault(_jump);
 
@@ -12918,25 +12917,20 @@ var Home = function Home(_ref) {
     { className: 'Home' },
     _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
-      'h1',
-      null,
-      'Welcome'
-    ),
-    _react2.default.createElement(
       'div',
       { className: 'content' },
       _react2.default.createElement(
-        'p',
+        'h1',
         null,
-        'Welcome to my website. There is not going to be a whole lot of text here because most of this section should be occupied by a nice splash immage/banner, this is just an intro to the site/org'
+        'Welcome'
+      ),
+      _react2.default.createElement(
+        'p',
+        { style: { cursor: 'pointer' }, onClick: function onClick() {
+            return jumpDown();
+          } },
+        '\u2186'
       )
-    ),
-    _react2.default.createElement(
-      'p',
-      { style: { cursor: 'pointer' }, onClick: function onClick() {
-          return jumpDown();
-        } },
-      '\u2186'
     )
   );
 };
@@ -12966,7 +12960,7 @@ var _reactRouterDom = __webpack_require__(100);
 
 var _reactRedux = __webpack_require__(13);
 
-var _jump = __webpack_require__(32);
+var _jump = __webpack_require__(27);
 
 var _jump2 = _interopRequireDefault(_jump);
 
@@ -13045,13 +13039,6 @@ var Nav = function (_React$Component) {
             _react2.default.createElement(
               'td',
               { onClick: function onClick(e) {
-                  return scroll(e, 'About');
-                } },
-              'About'
-            ),
-            _react2.default.createElement(
-              'td',
-              { onClick: function onClick(e) {
                   return scroll(e, 'Trainer');
                 } },
               'Trainer'
@@ -13059,16 +13046,16 @@ var Nav = function (_React$Component) {
             _react2.default.createElement(
               'td',
               { onClick: function onClick(e) {
-                  return scroll(e, 'Training');
+                  return scroll(e, 'About');
                 } },
-              'Training'
+              'About'
             ),
             _react2.default.createElement(
               'td',
               { onClick: function onClick(e) {
-                  return scroll(e, 'Facilities');
+                  return scroll(e, 'Training');
                 } },
-              'Facilities'
+              'Training'
             ),
             _react2.default.createElement(
               'td',
@@ -13278,7 +13265,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(13);
 
-var _jump = __webpack_require__(32);
+var _jump = __webpack_require__(27);
 
 var _jump2 = _interopRequireDefault(_jump);
 
@@ -13482,7 +13469,7 @@ exports.default = greetings;
 
 var _assign = __webpack_require__(5);
 
-var emptyObject = __webpack_require__(31);
+var emptyObject = __webpack_require__(32);
 var _invariant = __webpack_require__(1);
 
 if (process.env.NODE_ENV !== 'production') {
@@ -16383,7 +16370,7 @@ module.exports = AutoFocusUtils;
 
 
 
-var EventPropagators = __webpack_require__(28);
+var EventPropagators = __webpack_require__(29);
 var ExecutionEnvironment = __webpack_require__(7);
 var FallbackCompositionState = __webpack_require__(163);
 var SyntheticCompositionEvent = __webpack_require__(206);
@@ -16993,8 +16980,8 @@ module.exports = CSSPropertyOperations;
 
 
 
-var EventPluginHub = __webpack_require__(27);
-var EventPropagators = __webpack_require__(28);
+var EventPluginHub = __webpack_require__(28);
+var EventPropagators = __webpack_require__(29);
 var ExecutionEnvironment = __webpack_require__(7);
 var ReactDOMComponentTree = __webpack_require__(6);
 var ReactUpdates = __webpack_require__(14);
@@ -17393,7 +17380,7 @@ module.exports = DefaultEventPluginOrder;
 
 
 
-var EventPropagators = __webpack_require__(28);
+var EventPropagators = __webpack_require__(29);
 var ReactDOMComponentTree = __webpack_require__(6);
 var SyntheticMouseEvent = __webpack_require__(35);
 
@@ -18036,7 +18023,7 @@ var React = __webpack_require__(23);
 var ReactComponentEnvironment = __webpack_require__(51);
 var ReactCurrentOwner = __webpack_require__(15);
 var ReactErrorUtils = __webpack_require__(52);
-var ReactInstanceMap = __webpack_require__(29);
+var ReactInstanceMap = __webpack_require__(30);
 var ReactInstrumentation = __webpack_require__(11);
 var ReactNodeTypes = __webpack_require__(83);
 var ReactReconciler = __webpack_require__(22);
@@ -18045,7 +18032,7 @@ if (process.env.NODE_ENV !== 'production') {
   var checkReactTypeSpec = __webpack_require__(215);
 }
 
-var emptyObject = __webpack_require__(31);
+var emptyObject = __webpack_require__(32);
 var invariant = __webpack_require__(1);
 var shallowEqual = __webpack_require__(41);
 var shouldUpdateReactComponent = __webpack_require__(59);
@@ -19063,7 +19050,7 @@ var DOMLazyTree = __webpack_require__(21);
 var DOMNamespaces = __webpack_require__(47);
 var DOMProperty = __webpack_require__(17);
 var DOMPropertyOperations = __webpack_require__(75);
-var EventPluginHub = __webpack_require__(27);
+var EventPluginHub = __webpack_require__(28);
 var EventPluginRegistry = __webpack_require__(33);
 var ReactBrowserEventEmitter = __webpack_require__(34);
 var ReactDOMComponentFlags = __webpack_require__(76);
@@ -22170,7 +22157,7 @@ module.exports = REACT_ELEMENT_TYPE;
 
 
 
-var EventPluginHub = __webpack_require__(27);
+var EventPluginHub = __webpack_require__(28);
 
 function runEventQueueInBatch(events) {
   EventPluginHub.enqueueEvents(events);
@@ -22407,7 +22394,7 @@ module.exports = ReactHostOperationHistoryHook;
 
 
 var DOMProperty = __webpack_require__(17);
-var EventPluginHub = __webpack_require__(27);
+var EventPluginHub = __webpack_require__(28);
 var EventPluginUtils = __webpack_require__(48);
 var ReactComponentEnvironment = __webpack_require__(51);
 var ReactEmptyComponent = __webpack_require__(78);
@@ -22546,7 +22533,7 @@ module.exports = ReactMarkupChecksum;
 var _prodInvariant = __webpack_require__(3);
 
 var ReactComponentEnvironment = __webpack_require__(51);
-var ReactInstanceMap = __webpack_require__(29);
+var ReactInstanceMap = __webpack_require__(30);
 var ReactInstrumentation = __webpack_require__(11);
 
 var ReactCurrentOwner = __webpack_require__(15);
@@ -23970,7 +23957,7 @@ module.exports = SVGDOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(28);
+var EventPropagators = __webpack_require__(29);
 var ExecutionEnvironment = __webpack_require__(7);
 var ReactDOMComponentTree = __webpack_require__(6);
 var ReactInputSelection = __webpack_require__(81);
@@ -24167,7 +24154,7 @@ module.exports = SelectEventPlugin;
 var _prodInvariant = __webpack_require__(3);
 
 var EventListener = __webpack_require__(65);
-var EventPropagators = __webpack_require__(28);
+var EventPropagators = __webpack_require__(29);
 var ReactDOMComponentTree = __webpack_require__(6);
 var SyntheticAnimationEvent = __webpack_require__(204);
 var SyntheticClipboardEvent = __webpack_require__(205);
@@ -24178,7 +24165,7 @@ var SyntheticMouseEvent = __webpack_require__(35);
 var SyntheticDragEvent = __webpack_require__(207);
 var SyntheticTouchEvent = __webpack_require__(211);
 var SyntheticTransitionEvent = __webpack_require__(212);
-var SyntheticUIEvent = __webpack_require__(30);
+var SyntheticUIEvent = __webpack_require__(31);
 var SyntheticWheelEvent = __webpack_require__(213);
 
 var emptyFunction = __webpack_require__(10);
@@ -24564,7 +24551,7 @@ module.exports = SyntheticDragEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(30);
+var SyntheticUIEvent = __webpack_require__(31);
 
 /**
  * @interface FocusEvent
@@ -24647,7 +24634,7 @@ module.exports = SyntheticInputEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(30);
+var SyntheticUIEvent = __webpack_require__(31);
 
 var getEventCharCode = __webpack_require__(55);
 var getEventKey = __webpack_require__(219);
@@ -24736,7 +24723,7 @@ module.exports = SyntheticKeyboardEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(30);
+var SyntheticUIEvent = __webpack_require__(31);
 
 var getEventModifierState = __webpack_require__(56);
 
@@ -25117,7 +25104,7 @@ var _prodInvariant = __webpack_require__(3);
 
 var ReactCurrentOwner = __webpack_require__(15);
 var ReactDOMComponentTree = __webpack_require__(6);
-var ReactInstanceMap = __webpack_require__(29);
+var ReactInstanceMap = __webpack_require__(30);
 
 var getHostComponentFromComposite = __webpack_require__(88);
 var invariant = __webpack_require__(1);

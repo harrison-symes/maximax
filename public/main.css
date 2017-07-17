@@ -91,9 +91,13 @@ body {
 }
 
 .content ul {
+	font-size: 2em;
   list-style-type: none;
   text-align: left;
-  margin-left: 40%;
+	margin: auto;
+	margin-left: 20%;
+	border-color: rgba(195,197,199, 0.7);
+  /*margin-left: 40%;*/
 }
 
 .content li:before {
@@ -172,6 +176,7 @@ td {
   font-size: 1em;
   max-height: 10vh;
   text-align: center;
+	margin:auto;
 }
 
 

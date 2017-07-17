@@ -15,10 +15,9 @@ const App = () => (
       <Header />
       <div className="app-body">
         <Home />
-        <About />
         <Trainers />
+        <About />
         <Training />
-        <Facilities />
         <Contact />
 
       </div>

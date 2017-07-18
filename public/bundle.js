@@ -12907,7 +12907,7 @@ var _jump2 = _interopRequireDefault(_jump);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var jumpDown = function jumpDown() {
-  (0, _jump2.default)('.About', { offset: 0 });
+  (0, _jump2.default)('.Trainer', { offset: -10 });
 };
 
 var Home = function Home(_ref) {
@@ -12918,17 +12918,17 @@ var Home = function Home(_ref) {
     _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'div',
-      { className: 'content' },
+      { className: 'Home-content', style: { cursor: 'pointer' }, onClick: function onClick() {
+          return jumpDown();
+        } },
       _react2.default.createElement(
         'h1',
         null,
         'Welcome'
       ),
       _react2.default.createElement(
-        'p',
-        { style: { cursor: 'pointer' }, onClick: function onClick() {
-            return jumpDown();
-          } },
+        'h2',
+        null,
         '\u2186'
       )
     )

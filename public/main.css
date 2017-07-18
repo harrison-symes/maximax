@@ -70,7 +70,7 @@ body {
 }
 
 .content {
-  max-width: 70%;
+  max-width: 90%;
   text-align: center;
   margin: auto;
   margin-top: 5vh;
@@ -84,18 +84,20 @@ body {
 	overflow: hidden;
 }
 
-.content:hover {
+/*.content:hover {
   background-color: #C3C5C7;
   border-color: rgba(255,255,255, 0.7);
   box-shadow: 0 0 5px #C3C5C7;
-}
+}*/
 
 .content ul {
-	font-size: 2em;
+	/*width: 100%;*/
+	padding: 5vh;
+	font-size: 1.4em;
   list-style-type: none;
   text-align: left;
 	margin: auto;
-	margin-left: 20%;
+	margin-left: 5vw;
 	border-color: rgba(195,197,199, 0.7);
   /*margin-left: 40%;*/
 }
@@ -106,6 +108,7 @@ body {
 
 .line-separator {
   margin:auto;
+	margin-bottom: 10vh;
   height:.5vh;
   width: 100%;
   background:#232C33;
@@ -114,8 +117,9 @@ body {
 
 .line-separator-bottom {
   margin:auto;
-  margin-bottom: 7vh;
-  margin-top: 0px;
+  margin-top: 0vh;
+	padding-top: 0vh;
+	margin-bottom: 7vh;
   text-align: center;
   height: .5vh;
   width: 80%;
@@ -128,14 +132,51 @@ body {
   min-width: 60%;
   max-width: 80%;
   padding-top: 10vh;
+	padding-bottom: 10vh;
   margin: auto;
   text-align: center;
   overflow: hidden;
 }
 
+
+.Contact {
+	margin-bottom: 0vh;
+	padding-bottom: 0vh;
+}
+
+.Trainer {
+	padding-top: 0vh;
+	/*margin-top: 10vh;*/
+}
+
+.Home-content h1 {
+	color: white;
+	font-size: 10em;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+.Home-content h2 {
+	color: white;
+	font-size: 7em;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
 .Home {
-  width: 100%;
+  width: 100vw;
   height: 30vh;
+	background-image: url("./images/lesMillsOne.ashx");
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+		border-left: 5px solid white;
+		border-right: 5px solid white;
+		box-shadow: 5 5 20px #C3C5C7;
+		color: white;
 }
 
 .Trainer img {

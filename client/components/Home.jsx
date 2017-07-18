@@ -3,17 +3,15 @@ import {connect} from 'react-redux'
 import jump from 'jump.js'
 
 const jumpDown = () => {
-  jump('.About', {offset: 0})
+  jump('.Trainer', {offset: -10})
 }
 
 const Home = ({dispatch}) => (
   <div className="Home">
     <div className="line-separator"></div>
-    {/* <img src="http://placekitten.com/g/200/200" /> */}
-    <div className="content">
+    <div className="Home-content" style={{cursor: 'pointer'}} onClick={() => jumpDown()}>
       <h1>Welcome</h1>
-      <p style={{cursor: 'pointer'}} onClick={() => jumpDown()}>ↆ</p>
-      
+      <h2>ↆ</h2>
     </div>
   </div>
 )

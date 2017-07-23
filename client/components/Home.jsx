@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import jump from 'jump.js'
 
 const jumpDown = () => {
-  jump('.Trainer', {offset: -10})
+  jump('.Trainer', {offset: -85})
 }
 
 const Home = ({dispatch}) => (

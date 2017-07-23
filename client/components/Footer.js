@@ -8,7 +8,7 @@ const scroll = (e) => {
 
 const Footer = ({dispatch}) => (
   <div className="Footer" onClick={(e) => scroll(e)}>
-    <img src="http://placekitten.com/g/200/200" />
+    <a href="https://www.instagram.com/symesmax"><img src="./images/instagram.png" /></a>
     <img src="http://placekitten.com/g/200/200"/>
   </div>
 )

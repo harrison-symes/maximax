@@ -12838,7 +12838,11 @@ var Footer = function Footer(_ref) {
     { className: 'Footer', onClick: function onClick(e) {
         return scroll(e);
       } },
-    _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' }),
+    _react2.default.createElement(
+      'a',
+      { href: 'https://www.instagram.com/symesmax' },
+      _react2.default.createElement('img', { src: './images/instagram.png' })
+    ),
     _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' })
   );
 };
@@ -12907,7 +12911,7 @@ var _jump2 = _interopRequireDefault(_jump);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var jumpDown = function jumpDown() {
-  (0, _jump2.default)('.Trainer', { offset: -10 });
+  (0, _jump2.default)('.Trainer', { offset: -85 });
 };
 
 var Home = function Home(_ref) {

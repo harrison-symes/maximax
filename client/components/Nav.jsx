@@ -36,20 +36,33 @@ class Nav extends React.Component {
           {/* <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Home')}>Home </span> */}
           <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Trainer')}>Trainer </span>
           <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'About')}>About </span>
-          <span className="level-item has-text-centered" onClick={(e) => scroll(e, 'Home')}>
-            <img src="http://bulma.io/images/bulma-type.png" style={{height: '30px'}}/>
-          </span>
+
           <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Training')}>Training </span>
           <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Contact')}>Contact </span>
     </div>
   }
   render() {
     return <div
-      className="Nav level nav hero is-bold is-dark">
-      {this.state.showNav || this.state.mouseOver
-        ? this.renderNav()
-        : this.renderIcon()
-      }
+      className="Nav hero is-bold is-dark">
+      <div className="container">
+        <div class="nav-left">
+          <span className="level-item has-text-centered" onClick={(e) => scroll(e, 'Home')}>
+            <img src="http://bulma.io/images/bulma-type.png" style={{height: '30px'}}/>
+          </span>
+        </div>
+        <span class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="nav-right nav-menu">
+          <span className="nav-item has-text-centered title link" onClick={(e) => scroll(e, 'Trainer')}>Trainer </span>
+          <span className="nav-item has-text-centered title link" onClick={(e) => scroll(e, 'About')}>About </span>
+
+          <span className="nav-item has-text-centered title link" onClick={(e) => scroll(e, 'Training')}>Training </span>
+          <span className="nav-item has-text-centered title link" onClick={(e) => scroll(e, 'Contact')}>Contact </span>
+        </div>
+      </div>
     </div>
   }
 }

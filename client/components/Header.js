@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Nav from './Nav'
 
 const Header = ({dispatch}) => (
-  <header className="Header hero-head">
+  <header className="Header nav hero-head">
     <Nav />
   </header>
 )

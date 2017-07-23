@@ -12882,7 +12882,7 @@ var Header = function Header(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'header',
-    { className: 'Header hero-head' },
+    { className: 'Header nav hero-head' },
     _react2.default.createElement(_Nav2.default, null)
   );
 };
@@ -13048,13 +13048,6 @@ var Nav = function (_React$Component) {
         ),
         _react2.default.createElement(
           'span',
-          { className: 'level-item has-text-centered', onClick: function onClick(e) {
-              return scroll(e, 'Home');
-            } },
-          _react2.default.createElement('img', { src: 'http://bulma.io/images/bulma-type.png', style: { height: '30px' } })
-        ),
-        _react2.default.createElement(
-          'span',
           { className: 'level-item has-text-centered title link', onClick: function onClick(e) {
               return scroll(e, 'Training');
             } },
@@ -13075,8 +13068,61 @@ var Nav = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         {
-          className: 'Nav level nav hero is-bold is-dark' },
-        this.state.showNav || this.state.mouseOver ? this.renderNav() : this.renderIcon()
+          className: 'Nav hero is-bold is-dark' },
+        _react2.default.createElement(
+          'div',
+          { className: 'container' },
+          _react2.default.createElement(
+            'div',
+            { 'class': 'nav-left' },
+            _react2.default.createElement(
+              'span',
+              { className: 'level-item has-text-centered', onClick: function onClick(e) {
+                  return scroll(e, 'Home');
+                } },
+              _react2.default.createElement('img', { src: 'http://bulma.io/images/bulma-type.png', style: { height: '30px' } })
+            )
+          ),
+          _react2.default.createElement(
+            'span',
+            { 'class': 'nav-toggle' },
+            _react2.default.createElement('span', null),
+            _react2.default.createElement('span', null),
+            _react2.default.createElement('span', null)
+          ),
+          _react2.default.createElement(
+            'div',
+            { 'class': 'nav-right nav-menu' },
+            _react2.default.createElement(
+              'span',
+              { className: 'nav-item has-text-centered title link', onClick: function onClick(e) {
+                  return scroll(e, 'Trainer');
+                } },
+              'Trainer '
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'nav-item has-text-centered title link', onClick: function onClick(e) {
+                  return scroll(e, 'About');
+                } },
+              'About '
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'nav-item has-text-centered title link', onClick: function onClick(e) {
+                  return scroll(e, 'Training');
+                } },
+              'Training '
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'nav-item has-text-centered title link', onClick: function onClick(e) {
+                  return scroll(e, 'Contact');
+                } },
+              'Contact '
+            )
+          )
+        )
       );
     }
   }]);

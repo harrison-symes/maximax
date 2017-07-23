@@ -27,7 +27,7 @@ body {
   min-height: 10vh;
   /*text-align: center;*/
   font-size: 1.5em;
-  /*text-overflow: clip;*/
+  text-overflow: clip;
   cursor: alias;
   opacity: 1;
 }
@@ -169,14 +169,12 @@ body {
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
-
-.Home {
+/*.Home {
 	padding-top: 7vh;
   width: 100vw;
   height: 30vh;
 	background-image: url("./images/lesMillsOne.ashx");
 
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -184,7 +182,7 @@ body {
 
 		box-shadow: 5 5 20px #C3C5C7;
 		color: white;
-}
+}*/
 
 .Trainer img {
   clear: left;

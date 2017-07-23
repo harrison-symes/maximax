@@ -5,10 +5,12 @@
   "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
   "main": "server/index.js",
   "scripts": {
-    "dev": "nodemon --watch server server/index & webpack --watch",
+    "dev": "concurrently \"npm run watch:sass\" \"npm run watch:dev\"",
+    "watch:dev": "nodemon --watch server server/index & webpack --watch",
     "start": "node server/index",
     "test": "ava  -v  --serial 'test/**/*.test.js'",
     "watch": "nodemon -e js,jsx -x npm test",
+    "watch:sass": "sass --watch sass/style.sass:main.css",
     "h:deploy": "git push heroku master",
     "h:migrate": "heroku run knex migrate:latest",
     "h:rollback": "heroku run knex migrate:rollback",

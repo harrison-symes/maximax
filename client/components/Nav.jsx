@@ -30,24 +30,22 @@ class Nav extends React.Component {
     return <p className="nav-icon">&#9776;</p>
   }
   renderNav() {
-    return <table className="Nav-Table">
-      <tbody>
-        <tr>
-          <td onClick={(e) => scroll(e, 'Home')}>Home</td>
-          <td onClick={(e) => scroll(e, 'Trainer')}>Trainer</td>
-          <td onClick={(e) => scroll(e, 'About')}>About</td>
-          <td onClick={(e) => scroll(e, 'Training')}>Training</td>
-          <td onClick={(e) => scroll(e, 'Contact')}>Contact</td>
-        </tr>
-      </tbody>
-    </table>
+
+
+    return <div className="Nav-Table level-left has-text-centered hero-body is-dark">
+          {/* <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Home')}>Home </span> */}
+          <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Trainer')}>Trainer </span>
+          <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'About')}>About </span>
+          <span className="level-item has-text-centered" onClick={(e) => scroll(e, 'Home')}>
+            <img src="http://bulma.io/images/bulma-type.png" style={{height: '30px'}}/>
+          </span>
+          <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Training')}>Training </span>
+          <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Contact')}>Contact </span>
+    </div>
   }
   render() {
     return <div
-      className="Nav"
-      onMouseOver={(e) => this.mouseOn()}
-      onMouseLeave={(e) => this.mouseOff()}
-      onClick={(e) => this.toggleShow()} >
+      className="Nav level nav hero is-bold is-dark">
       {this.state.showNav || this.state.mouseOver
         ? this.renderNav()
         : this.renderIcon()

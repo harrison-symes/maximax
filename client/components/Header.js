@@ -3,9 +3,9 @@ import {connect} from 'react-redux'
 import Nav from './Nav'
 
 const Header = ({dispatch}) => (
-  <div className="Header">
+  <header className="Header hero-head">
     <Nav />
-  </div>
+  </header>
 )
 
 const mapStateToProps = (state) => {

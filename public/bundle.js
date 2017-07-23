@@ -12611,7 +12611,7 @@ var About = function About(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'About' },
+    { className: 'About media' },
     _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',
@@ -12620,14 +12620,18 @@ var About = function About(_ref) {
     ),
     _react2.default.createElement(
       'div',
-      { className: 'content' },
+      { className: 'media-content media-left' },
       _react2.default.createElement(
         'p',
         null,
         'My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym. I routinely search the evidence for optimal exercise methods and interventions for each client or problem. Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise. I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you\u2019re moving efficiently.'
       )
     ),
-    _react2.default.createElement(_Referrals2.default, null)
+    _react2.default.createElement(
+      'div',
+      { className: 'media-content media-right' },
+      _react2.default.createElement(_Referrals2.default, null)
+    )
   );
 };
 
@@ -12877,8 +12881,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Header = function Header(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
-    'div',
-    { className: 'Header' },
+    'header',
+    { className: 'Header hero-head' },
     _react2.default.createElement(_Nav2.default, null)
   );
 };
@@ -12918,21 +12922,21 @@ var Home = function Home(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'Home' },
-    _react2.default.createElement('div', { className: 'line-separator' }),
+    { className: 'Home hero is-full-height is-light' },
+    _react2.default.createElement('div', { className: 'line-separator home-separator' }),
     _react2.default.createElement(
       'div',
-      { className: 'Home-content', style: { cursor: 'pointer' }, onClick: function onClick() {
+      { className: 'Home-content hero-body container', style: { cursor: 'pointer' }, onClick: function onClick() {
           return jumpDown();
         } },
       _react2.default.createElement(
         'h1',
-        null,
+        { className: 'title' },
         'Welcome'
       ),
       _react2.default.createElement(
         'h2',
-        null,
+        { className: 'subtitle' },
         '\u2186'
       )
     )
@@ -13024,72 +13028,54 @@ var Nav = function (_React$Component) {
   }, {
     key: 'renderNav',
     value: function renderNav() {
+
       return _react2.default.createElement(
-        'table',
-        { className: 'Nav-Table' },
+        'div',
+        { className: 'Nav-Table level-left has-text-centered hero-body is-dark' },
         _react2.default.createElement(
-          'tbody',
-          null,
-          _react2.default.createElement(
-            'tr',
-            null,
-            _react2.default.createElement(
-              'td',
-              { onClick: function onClick(e) {
-                  return scroll(e, 'Home');
-                } },
-              'Home'
-            ),
-            _react2.default.createElement(
-              'td',
-              { onClick: function onClick(e) {
-                  return scroll(e, 'Trainer');
-                } },
-              'Trainer'
-            ),
-            _react2.default.createElement(
-              'td',
-              { onClick: function onClick(e) {
-                  return scroll(e, 'About');
-                } },
-              'About'
-            ),
-            _react2.default.createElement(
-              'td',
-              { onClick: function onClick(e) {
-                  return scroll(e, 'Training');
-                } },
-              'Training'
-            ),
-            _react2.default.createElement(
-              'td',
-              { onClick: function onClick(e) {
-                  return scroll(e, 'Contact');
-                } },
-              'Contact'
-            )
-          )
+          'span',
+          { className: 'level-item has-text-centered title link', onClick: function onClick(e) {
+              return scroll(e, 'Trainer');
+            } },
+          'Trainer '
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: 'level-item has-text-centered title link', onClick: function onClick(e) {
+              return scroll(e, 'About');
+            } },
+          'About '
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: 'level-item has-text-centered', onClick: function onClick(e) {
+              return scroll(e, 'Home');
+            } },
+          _react2.default.createElement('img', { src: 'http://bulma.io/images/bulma-type.png', style: { height: '30px' } })
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: 'level-item has-text-centered title link', onClick: function onClick(e) {
+              return scroll(e, 'Training');
+            } },
+          'Training '
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: 'level-item has-text-centered title link', onClick: function onClick(e) {
+              return scroll(e, 'Contact');
+            } },
+          'Contact '
         )
       );
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       return _react2.default.createElement(
         'div',
         {
-          className: 'Nav',
-          onMouseOver: function onMouseOver(e) {
-            return _this2.mouseOn();
-          },
-          onMouseLeave: function onMouseLeave(e) {
-            return _this2.mouseOff();
-          },
-          onClick: function onClick(e) {
-            return _this2.toggleShow();
-          } },
+          className: 'Nav level nav hero is-bold is-dark' },
         this.state.showNav || this.state.mouseOver ? this.renderNav() : this.renderIcon()
       );
     }
@@ -13235,14 +13221,22 @@ var Trainers = function Trainers(_ref) {
       null,
       'Max Symes'
     ),
-    _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' }),
     _react2.default.createElement(
       'div',
-      { className: 'content' },
+      { className: 'columns' },
       _react2.default.createElement(
-        'p',
-        null,
-        'I received my Honour\u2019s degree in Physical Education with a concentration in Exercise Prescription through the University of Otago. In addition to being a Les Mills Personal Trainer, I have worked as Strength & Conditioning Intern for the Pulse Energy Highlanders (2017) as well as a tutor at the University of Otago.'
+        'div',
+        { className: 'column' },
+        _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'column content' },
+        _react2.default.createElement(
+          'p',
+          null,
+          'I received my Honour\u2019s degree in Physical Education with a concentration in Exercise Prescription through the University of Otago. In addition to being a Les Mills Personal Trainer, I have worked as Strength & Conditioning Intern for the Pulse Energy Highlanders (2017) as well as a tutor at the University of Otago.'
+        )
       )
     )
   );
@@ -13349,13 +13343,12 @@ var Training = function Training(_ref) {
       _react2.default.createElement(
         'p',
         null,
-        'The first month of programming is $80, which will cover your assessment and paperwork. For all other subsequent months, the cost will be ',
-        _react2.default.createElement(
-          'h3',
-          null,
-          '$60 per month'
-        ),
-        '.'
+        'The first month of programming is $80, which will cover your assessment and paperwork. For all other subsequent months, the cost will be'
+      ),
+      _react2.default.createElement(
+        'h3',
+        null,
+        '$60 per month'
       )
     ),
     _react2.default.createElement(

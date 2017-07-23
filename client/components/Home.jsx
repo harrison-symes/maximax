@@ -7,11 +7,11 @@ const jumpDown = () => {
 }
 
 const Home = ({dispatch}) => (
-  <div className="Home">
-    <div className="line-separator"></div>
-    <div className="Home-content" style={{cursor: 'pointer'}} onClick={() => jumpDown()}>
-      <h1>Welcome</h1>
-      <h2>ↆ</h2>
+  <div className="Home hero is-full-height is-light">
+    <div className="line-separator home-separator"></div>
+    <div className="Home-content hero-body container" style={{cursor: 'pointer'}} onClick={() => jumpDown()}>
+      <h1 className="title">Welcome</h1>
+      <h2 className="subtitle">ↆ</h2>
     </div>
   </div>
 )

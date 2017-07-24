@@ -19,7 +19,7 @@ class Nav extends React.Component {
   }
   renderNavItem(item) {
     return (
-      <span className="Nav-Item nav-item has-text-centered title link level-item" onClick={(e) => this.scroll(item)}>
+      <span className="Nav-Item nav-item has-text-centered title link column" onClick={(e) => this.scroll(item)}>
         <h2>{item}</h2>
       </span>
     )
@@ -35,7 +35,7 @@ class Nav extends React.Component {
   }
   renderNavItems() {
     return (
-      <div className="nav-right nav-menu">
+      <div className="nav-right nav-menu columns">
           {this.renderNavItem('Trainer')}
           {this.renderNavItem('About')}
           {this.renderNavItem('Training')}
@@ -48,19 +48,15 @@ class Nav extends React.Component {
   }
   render() {
     return <div
-      className="Nav nav hero-head is-bold is-dark level-left">
+      className="Nav nav hero-head is-bold is-dark ">
       <div className="container">
         <div className="nav-left">
           <span className="level-item has-text-centered" onClick={(e) => scroll(e, 'Home')}>
             <img src="http://bulma.io/images/bulma-type.png" style={{height: '30px'}}/>
+            {this.renderNavIcon()}
           </span>
-        </div><span className="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-          {this.renderNavIcon()}
-        </span>
-        {this.renderOption()}
+          {this.renderOption()}
+        </div>
       </div>
     </div>
   }

@@ -13013,7 +13013,7 @@ var Nav = function (_React$Component) {
 
       return _react2.default.createElement(
         'span',
-        { className: 'Nav-Item nav-item has-text-centered title link level-item', onClick: function onClick(e) {
+        { className: 'Nav-Item nav-item has-text-centered title link column', onClick: function onClick(e) {
             return _this2.scroll(item);
           } },
         _react2.default.createElement(
@@ -13043,7 +13043,7 @@ var Nav = function (_React$Component) {
     value: function renderNavItems() {
       return _react2.default.createElement(
         'div',
-        { className: 'nav-right nav-menu' },
+        { className: 'nav-right nav-menu columns' },
         this.renderNavItem('Trainer'),
         this.renderNavItem('About'),
         this.renderNavItem('Training'),
@@ -13061,7 +13061,7 @@ var Nav = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         {
-          className: 'Nav nav hero-head is-bold is-dark level-left' },
+          className: 'Nav nav hero-head is-bold is-dark ' },
         _react2.default.createElement(
           'div',
           { className: 'container' },
@@ -13073,18 +13073,11 @@ var Nav = function (_React$Component) {
               { className: 'level-item has-text-centered', onClick: function onClick(e) {
                   return scroll(e, 'Home');
                 } },
-              _react2.default.createElement('img', { src: 'http://bulma.io/images/bulma-type.png', style: { height: '30px' } })
-            )
-          ),
-          _react2.default.createElement(
-            'span',
-            { className: 'nav-toggle' },
-            _react2.default.createElement('span', null),
-            _react2.default.createElement('span', null),
-            _react2.default.createElement('span', null),
-            this.renderNavIcon()
-          ),
-          this.renderOption()
+              _react2.default.createElement('img', { src: 'http://bulma.io/images/bulma-type.png', style: { height: '30px' } }),
+              this.renderNavIcon()
+            ),
+            this.renderOption()
+          )
         )
       );
     }

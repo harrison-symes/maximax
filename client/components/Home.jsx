@@ -7,13 +7,24 @@ const jumpDown = () => {
 }
 
 const Home = ({dispatch}) => (
-  <div className="Home hero is-full-height is-light">
-    <div className="line-separator home-separator"></div>
-    <div className="Home-content hero-body container" style={{cursor: 'pointer'}} onClick={() => jumpDown()}>
-      <h1 className="title">Welcome</h1>
-      <h2 className="subtitle">ↆ</h2>
+  <section
+    className="Home hero is-fullheight  is-light is-bold"
+    style={{cursor: 'pointer'}}
+    onClick={() => jumpDown()}
+  >
+    {/* <div className="line-separator home-separator"></div> */}
+    <div className="hero-head">
     </div>
-  </div>
+    <div className="hero-body">
+      <div className="container">
+        <h1 className="title">Welcome</h1>
+        <h2 className="subtitle">ↆ</h2>
+      </div>
+    </div>
+    <div className="hero-foot">
+
+    </div>
+  </section>
 )
 
 const mapStateToProps = (state) => {

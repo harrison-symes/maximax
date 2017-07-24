@@ -12611,7 +12611,7 @@ var About = function About(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'About media' },
+    { className: 'About' },
     _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',
@@ -12619,19 +12619,11 @@ var About = function About(_ref) {
       'About'
     ),
     _react2.default.createElement(
-      'div',
-      { className: 'media-content media-left' },
-      _react2.default.createElement(
-        'p',
-        null,
-        'My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym. I routinely search the evidence for optimal exercise methods and interventions for each client or problem. Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise. I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you\u2019re moving efficiently.'
-      )
+      'p',
+      null,
+      'My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym. I routinely search the evidence for optimal exercise methods and interventions for each client or problem. Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise. I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you\u2019re moving efficiently.'
     ),
-    _react2.default.createElement(
-      'div',
-      { className: 'media-content media-right' },
-      _react2.default.createElement(_Referrals2.default, null)
-    )
+    _react2.default.createElement(_Referrals2.default, null)
   );
 };
 
@@ -12882,7 +12874,7 @@ var Header = function Header(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'header',
-    { className: 'Header nav hero-head' },
+    { className: 'Header nav hero' },
     _react2.default.createElement(_Nav2.default, null)
   );
 };
@@ -12921,25 +12913,34 @@ var jumpDown = function jumpDown() {
 var Home = function Home(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
-    'div',
-    { className: 'Home hero is-full-height is-light' },
-    _react2.default.createElement('div', { className: 'line-separator home-separator' }),
+    'section',
+    {
+      className: 'Home hero is-fullheight  is-light is-bold',
+      style: { cursor: 'pointer' },
+      onClick: function onClick() {
+        return jumpDown();
+      }
+    },
+    _react2.default.createElement('div', { className: 'hero-head' }),
     _react2.default.createElement(
       'div',
-      { className: 'Home-content hero-body container', style: { cursor: 'pointer' }, onClick: function onClick() {
-          return jumpDown();
-        } },
+      { className: 'hero-body' },
       _react2.default.createElement(
-        'h1',
-        { className: 'title' },
-        'Welcome'
-      ),
-      _react2.default.createElement(
-        'h2',
-        { className: 'subtitle' },
-        '\u2186'
+        'div',
+        { className: 'container' },
+        _react2.default.createElement(
+          'h1',
+          { className: 'title' },
+          'Welcome'
+        ),
+        _react2.default.createElement(
+          'h2',
+          { className: 'subtitle' },
+          '\u2186'
+        )
       )
-    )
+    ),
+    _react2.default.createElement('div', { className: 'hero-foot' })
   );
 };
 
@@ -12980,7 +12981,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var scroll = function scroll(e, name) {
+var scroll = function scroll(name) {
   console.log("jump", name);
   (0, _jump2.default)('.' + name, { offset: 0 });
 };
@@ -12991,75 +12992,18 @@ var Nav = function (_React$Component) {
   function Nav(props) {
     _classCallCheck(this, Nav);
 
-    var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
-
-    _this.state = {
-      showNav: true,
-      mouseOver: false
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
   }
 
   _createClass(Nav, [{
-    key: 'toggleShow',
-    value: function toggleShow() {
-      console.log("clicked");
-      this.setState({ showNav: !this.state.showNav });
-    }
-  }, {
-    key: 'mouseOn',
-    value: function mouseOn() {
-      this.setState({ mouseOver: true });
-    }
-  }, {
-    key: 'mouseOff',
-    value: function mouseOff() {
-      this.setState({ mouseOver: false });
-    }
-  }, {
-    key: 'renderIcon',
-    value: function renderIcon() {
+    key: 'renderNavItem',
+    value: function renderNavItem(item) {
       return _react2.default.createElement(
-        'p',
-        { className: 'nav-icon' },
-        '\u2630'
-      );
-    }
-  }, {
-    key: 'renderNav',
-    value: function renderNav() {
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'Nav-Table level-left has-text-centered hero-body is-dark' },
-        _react2.default.createElement(
-          'span',
-          { className: 'level-item has-text-centered title link', onClick: function onClick(e) {
-              return scroll(e, 'Trainer');
-            } },
-          'Trainer '
-        ),
-        _react2.default.createElement(
-          'span',
-          { className: 'level-item has-text-centered title link', onClick: function onClick(e) {
-              return scroll(e, 'About');
-            } },
-          'About '
-        ),
-        _react2.default.createElement(
-          'span',
-          { className: 'level-item has-text-centered title link', onClick: function onClick(e) {
-              return scroll(e, 'Training');
-            } },
-          'Training '
-        ),
-        _react2.default.createElement(
-          'span',
-          { className: 'level-item has-text-centered title link', onClick: function onClick(e) {
-              return scroll(e, 'Contact');
-            } },
-          'Contact '
-        )
+        'span',
+        { className: 'Nav-Item nav-item has-text-centered title link', onClick: function onClick(e) {
+            return scroll(item);
+          } },
+        item
       );
     }
   }, {
@@ -13068,7 +13012,7 @@ var Nav = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         {
-          className: 'Nav hero is-bold is-dark' },
+          className: 'Nav nav hero-head is-bold is-dark' },
         _react2.default.createElement(
           'div',
           { className: 'container' },
@@ -13094,32 +13038,16 @@ var Nav = function (_React$Component) {
             'div',
             { 'class': 'nav-right nav-menu' },
             _react2.default.createElement(
-              'span',
-              { className: 'nav-item has-text-centered title link', onClick: function onClick(e) {
-                  return scroll(e, 'Trainer');
-                } },
-              'Trainer '
+              'div',
+              null,
+              this.renderNavItem('Trainer'),
+              this.renderNavItem('About')
             ),
             _react2.default.createElement(
-              'span',
-              { className: 'nav-item has-text-centered title link', onClick: function onClick(e) {
-                  return scroll(e, 'About');
-                } },
-              'About '
-            ),
-            _react2.default.createElement(
-              'span',
-              { className: 'nav-item has-text-centered title link', onClick: function onClick(e) {
-                  return scroll(e, 'Training');
-                } },
-              'Training '
-            ),
-            _react2.default.createElement(
-              'span',
-              { className: 'nav-item has-text-centered title link', onClick: function onClick(e) {
-                  return scroll(e, 'Contact');
-                } },
-              'Contact '
+              'div',
+              null,
+              this.renderNavItem('Training'),
+              this.renderNavItem('Contact')
             )
           )
         )

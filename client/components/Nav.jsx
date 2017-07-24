@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import jump from 'jump.js'
 
-const scroll = (e, name) => {
+const scroll = (name) => {
   console.log("jump", name);
   jump(`.${name}`, {offset: 0})
 }
@@ -11,39 +11,17 @@ const scroll = (e, name) => {
 class Nav extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      showNav: true,
-      mouseOver: false
-    }
   }
-  toggleShow() {
-    console.log("clicked");
-    this.setState({showNav: !this.state.showNav})
-  }
-  mouseOn() {
-    this.setState({mouseOver: true})
-  }
-  mouseOff() {
-    this.setState({mouseOver: false})
-  }
-  renderIcon() {
-    return <p className="nav-icon">&#9776;</p>
-  }
-  renderNav() {
-
-
-    return <div className="Nav-Table level-left has-text-centered hero-body is-dark">
-          {/* <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Home')}>Home </span> */}
-          <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Trainer')}>Trainer </span>
-          <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'About')}>About </span>
-
-          <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Training')}>Training </span>
-          <span className="level-item has-text-centered title link" onClick={(e) => scroll(e, 'Contact')}>Contact </span>
-    </div>
+  renderNavItem(item) {
+    return (
+      <span className="Nav-Item nav-item has-text-centered title link" onClick={(e) => scroll(item)}>
+        {item}
+      </span>
+    )
   }
   render() {
     return <div
-      className="Nav hero is-bold is-dark">
+      className="Nav nav hero-head is-bold is-dark">
       <div className="container">
         <div class="nav-left">
           <span className="level-item has-text-centered" onClick={(e) => scroll(e, 'Home')}>
@@ -56,11 +34,14 @@ class Nav extends React.Component {
           <span></span>
         </span>
         <div class="nav-right nav-menu">
-          <span className="nav-item has-text-centered title link" onClick={(e) => scroll(e, 'Trainer')}>Trainer </span>
-          <span className="nav-item has-text-centered title link" onClick={(e) => scroll(e, 'About')}>About </span>
-
-          <span className="nav-item has-text-centered title link" onClick={(e) => scroll(e, 'Training')}>Training </span>
-          <span className="nav-item has-text-centered title link" onClick={(e) => scroll(e, 'Contact')}>Contact </span>
+          <div>
+            {this.renderNavItem('Trainer')}
+            {this.renderNavItem('About')}
+          </div>
+          <div>
+            {this.renderNavItem('Training')}
+            {this.renderNavItem('Contact')}
+          </div>
         </div>
       </div>
     </div>

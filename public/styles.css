@@ -1,0 +1,20 @@
+.Nav {
+  /*float: right;*/
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  display: inline-block;
+  /*background-color: #73787D;*/
+  min-height: 10vh;
+  /*text-align: center;*/
+  font-size: 1.5em;
+  /*text-overflow: clip;*/
+  opacity: 1;
+}
+
+.Nav-Item {
+  cursor: pointer;
+  margin: auto;
+  padding-left: 2.5vh;
+  padding-right: 2.5vh;
+}

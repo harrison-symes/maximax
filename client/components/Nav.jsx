@@ -2,16 +2,31 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import jump from 'jump.js'
+import Rainbow from 'rainbowvis.js'
 
 class Nav extends React.Component {
   constructor(props) {
     super(props)
+    var rainbow = new Rainbow();
+    rainbow.setNumberRange(0, 1000);
+    rainbow.setSpectrum('000000', 'A0C1D1');
     this.state = {
-      showNav: false
+      showNav: false,
+      rainbow,
+      cur: 0,
+      color: 'white'
     }
   }
+  componentDidMount() {
+    console.log("mounted", this.state);
+    setInterval(this.changeColour.bind(this), 1);
+  }
+  changeColour() {
+      let color = this.state.rainbow.colourAt(this.state.cur)
+      this.setState({color, cur: this.state.cur + 1})
+  }
   toggleNav() {
-    this.setState({showNav: !this.state.showNav})
+    this.setState({showNav: !this.state.showNav, cur: 0})
   }
   scroll(name) {
     this.setState({showNav: false})
@@ -29,17 +44,27 @@ class Nav extends React.Component {
       <span
         className="Nav-Icon nav-right nav-menu title"
         onClick={() => this.toggleNav()}>
-        ☰
+        {this.state.showNav ? '🗙' : '☰'}
+      </span>
+    )
+  }
+  renderContactButton() {
+    return (
+      <span className="Nav-Item nav-item has-text-centered title link column" onClick={(e) => this.scroll('Contact')}>
+        <h2
+          className="Contact-Button"
+          style={{color: `#` + this.state.color}}
+          >Contact</h2>
       </span>
     )
   }
   renderNavItems() {
     return (
-      <div className="nav-right nav-menu columns">
+      <div className="Nav-Items nav-right nav-menu columns">
           {this.renderNavItem('Trainer')}
           {this.renderNavItem('About')}
           {this.renderNavItem('Training')}
-          {this.renderNavItem('Contact')}
+          {this.renderContactButton()}
       </div>
     )
   }

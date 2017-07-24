@@ -12874,7 +12874,7 @@ var Header = function Header(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'header',
-    { className: 'Header nav hero' },
+    { className: 'Header nav hero leveis-bold is-dark' },
     _react2.default.createElement(_Nav2.default, null)
   );
 };
@@ -12981,30 +12981,79 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var scroll = function scroll(name) {
-  console.log("jump", name);
-  (0, _jump2.default)('.' + name, { offset: 0 });
-};
-
 var Nav = function (_React$Component) {
   _inherits(Nav, _React$Component);
 
   function Nav(props) {
     _classCallCheck(this, Nav);
 
-    return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
+
+    _this.state = {
+      showNav: false
+    };
+    return _this;
   }
 
   _createClass(Nav, [{
+    key: 'toggleNav',
+    value: function toggleNav() {
+      this.setState({ showNav: !this.state.showNav });
+    }
+  }, {
+    key: 'scroll',
+    value: function scroll(name) {
+      this.setState({ showNav: false });
+      (0, _jump2.default)('.' + name, { offset: 0 });
+    }
+  }, {
     key: 'renderNavItem',
     value: function renderNavItem(item) {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'span',
-        { className: 'Nav-Item nav-item has-text-centered title link', onClick: function onClick(e) {
-            return scroll(item);
+        { className: 'Nav-Item nav-item has-text-centered title link level-item', onClick: function onClick(e) {
+            return _this2.scroll(item);
           } },
-        item
+        _react2.default.createElement(
+          'h2',
+          null,
+          item
+        )
       );
+    }
+  }, {
+    key: 'renderNavIcon',
+    value: function renderNavIcon() {
+      var _this3 = this;
+
+      return _react2.default.createElement(
+        'span',
+        {
+          className: 'Nav-Icon nav-right nav-menu title',
+          onClick: function onClick() {
+            return _this3.toggleNav();
+          } },
+        '\u2630'
+      );
+    }
+  }, {
+    key: 'renderNavItems',
+    value: function renderNavItems() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'nav-right nav-menu' },
+        this.renderNavItem('Trainer'),
+        this.renderNavItem('About'),
+        this.renderNavItem('Training'),
+        this.renderNavItem('Contact')
+      );
+    }
+  }, {
+    key: 'renderOption',
+    value: function renderOption() {
+      if (this.state.showNav) return this.renderNavItems();
     }
   }, {
     key: 'render',
@@ -13012,13 +13061,13 @@ var Nav = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         {
-          className: 'Nav nav hero-head is-bold is-dark' },
+          className: 'Nav nav hero-head is-bold is-dark level-left' },
         _react2.default.createElement(
           'div',
           { className: 'container' },
           _react2.default.createElement(
             'div',
-            { 'class': 'nav-left' },
+            { className: 'nav-left' },
             _react2.default.createElement(
               'span',
               { className: 'level-item has-text-centered', onClick: function onClick(e) {
@@ -13029,27 +13078,13 @@ var Nav = function (_React$Component) {
           ),
           _react2.default.createElement(
             'span',
-            { 'class': 'nav-toggle' },
+            { className: 'nav-toggle' },
             _react2.default.createElement('span', null),
             _react2.default.createElement('span', null),
-            _react2.default.createElement('span', null)
+            _react2.default.createElement('span', null),
+            this.renderNavIcon()
           ),
-          _react2.default.createElement(
-            'div',
-            { 'class': 'nav-right nav-menu' },
-            _react2.default.createElement(
-              'div',
-              null,
-              this.renderNavItem('Trainer'),
-              this.renderNavItem('About')
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
-              this.renderNavItem('Training'),
-              this.renderNavItem('Contact')
-            )
-          )
+          this.renderOption()
         )
       );
     }

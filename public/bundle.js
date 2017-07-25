@@ -12612,10 +12612,9 @@ var About = function About(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'About' },
-    _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',
-      null,
+      { className: 'title' },
       'About'
     ),
     _react2.default.createElement(
@@ -13259,29 +13258,28 @@ var Trainers = function Trainers(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'Trainer' },
-    _react2.default.createElement('div', { className: 'line-separator' }),
+    { className: 'Trainer container has-text-centered' },
     _react2.default.createElement(
       'h1',
-      null,
+      { className: 'title is-fluid' },
       'Trainer'
     ),
     _react2.default.createElement(
       'h3',
-      null,
+      { className: 'subtitle' },
       'Max Symes'
     ),
     _react2.default.createElement(
       'div',
-      { className: 'columns' },
+      { className: 'container columns level' },
       _react2.default.createElement(
         'div',
-        { className: 'column' },
+        { className: 'column is-two-thirds level-left' },
         _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' })
       ),
       _react2.default.createElement(
         'div',
-        { className: 'column content' },
+        { className: 'column content level-right' },
         _react2.default.createElement(
           'p',
           null,

@@ -3,6 +3,7 @@ body {
   color: #232C33;
   margin: 0px;
   width: 100%;
+  overflow: hidden;
   /*font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;*/
 }
 

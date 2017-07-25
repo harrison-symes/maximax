@@ -25,7 +25,8 @@ class Nav extends React.Component {
       let color = this.state.rainbow.colourAt(this.state.cur)
       this.setState({color, cur: this.state.cur + 1})
   }
-  toggleNav() {
+  toggleNav(e) {
+    e.preventDefault()
     this.setState({showNav: !this.state.showNav, cur: 0})
   }
   scroll(name) {
@@ -41,10 +42,13 @@ class Nav extends React.Component {
   }
   renderNavIcon() {
     return (
-      <span
-        className="Nav-Icon nav-right nav-menu title"
-        onClick={() => this.toggleNav()}>
-        {this.state.showNav ? '🗙' : '☰'}
+      <span>
+        <a
+          href="#"
+          className="Nav-Icon nav-right nav-menu title"
+          onClick={(e) => this.toggleNav(e)}>
+          {this.state.showNav ? '🗙' : '☰'}
+        </a>
       </span>
     )
   }

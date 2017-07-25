@@ -12611,18 +12611,36 @@ var About = function About(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'About' },
+    { className: 'About container has-text-centered columns' },
     _react2.default.createElement(
-      'h1',
-      { className: 'title' },
-      'About'
+      'div',
+      { className: 'column is-three-quarters content' },
+      _react2.default.createElement(
+        'h1',
+        { className: 'title is-fluid ' },
+        'About'
+      ),
+      _react2.default.createElement(
+        'p',
+        { className: 'media' },
+        'My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym. I routinely search the evidence for optimal exercise methods and interventions for each client or problem. Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise. I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you\u2019re moving efficiently.'
+      )
     ),
     _react2.default.createElement(
-      'p',
-      null,
-      'My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym. I routinely search the evidence for optimal exercise methods and interventions for each client or problem. Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise. I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you\u2019re moving efficiently.'
+      'div',
+      { className: 'column is-one-third' },
+      _react2.default.createElement('img', { src: 'http://placekitten.com/g/400/400' })
     ),
-    _react2.default.createElement(_Referrals2.default, null)
+    _react2.default.createElement(
+      'div',
+      { className: 'title column media is-one-third' },
+      _react2.default.createElement(
+        'h3',
+        { className: 'title' },
+        'Referrals: '
+      ),
+      _react2.default.createElement(_Referrals2.default, null)
+    )
   );
 };
 
@@ -13271,15 +13289,15 @@ var Trainers = function Trainers(_ref) {
     ),
     _react2.default.createElement(
       'div',
-      { className: 'container columns level' },
+      { className: 'container columns is-gapless level' },
       _react2.default.createElement(
         'div',
         { className: 'column is-two-thirds level-left' },
-        _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' })
+        _react2.default.createElement('img', { src: 'http://placekitten.com/g/400/400' })
       ),
       _react2.default.createElement(
         'div',
-        { className: 'column content level-right' },
+        { className: 'column media content level-right' },
         _react2.default.createElement(
           'p',
           null,
@@ -13325,7 +13343,7 @@ var Training = function Training(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'Training' },
+    { className: 'Training container' },
     _react2.default.createElement('div', { className: 'line-separator' }),
     _react2.default.createElement(
       'h1',

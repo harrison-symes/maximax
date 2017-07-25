@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 const Trainers = ({dispatch}) => (
-  <div className="Trainer container has-text-centered">
+  <div className="Trainer container">
     <h1 className="title is-fluid">Trainer</h1>
     <h3 className="subtitle">Max Symes</h3>
     <div className="container columns is-gapless level">

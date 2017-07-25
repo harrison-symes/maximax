@@ -2,19 +2,22 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 const Contact = ({dispatch}) => (
-  <div className="Contact">
-    <div className="line-separator"></div>
-    <h1>Contact</h1>
-    <div className="Contact-Details content">
-      <p>For More information on training with me at Les Mills Dunedin, please use the following contact addresses:</p>
-      <ul>
-        <li>Mobile: 027 445 3965</li>
-        <li>Email: maxsymes@hotmail.com</li>
-        <li>Address: Les Mills,
-          10/12 Dowling St,
-          Dunedin, 9016</li>
-      </ul>
-      <p>"Google Map Here"</p>
+  <div className="Contact container has-text-centered">
+    <h1 className="title is-fluid">Contact</h1>
+    <div className="columns has-text-centered level">
+      <div className="Contact-Details column is-half box level-left level-item">
+        <p className="">For More information on training with me at Les Mills Dunedin, please use the following contact addresses:</p>
+        <ul className="">
+          <li>Mobile: 027 445 3965</li>
+          <li>Email: maxsymes@hotmail.com</li>
+          <li>Address: Les Mills,
+            10/12 Dowling St,
+            Dunedin, 9016</li>
+          </ul>
+        </div>
+      <div className="column box level-right level-item is-4">
+        "Google Map Here"
+      </div>
     </div>
 
   </div>

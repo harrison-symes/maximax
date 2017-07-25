@@ -31,7 +31,7 @@ class Nav extends React.Component {
   }
   scroll(name) {
     this.setState({showNav: false})
-    jump(`.${name}`, {offset: 0})
+    jump(`.${name}`, {offset: -100})
   }
   renderNavItem(item) {
     return (

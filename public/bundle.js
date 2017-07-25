@@ -12675,43 +12675,46 @@ var Contact = function Contact(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'Contact' },
-    _react2.default.createElement('div', { className: 'line-separator' }),
+    { className: 'Contact container has-text-centered' },
     _react2.default.createElement(
       'h1',
-      null,
+      { className: 'title is-fluid' },
       'Contact'
     ),
     _react2.default.createElement(
       'div',
-      { className: 'Contact-Details content' },
+      { className: 'columns has-text-centered level' },
       _react2.default.createElement(
-        'p',
-        null,
-        'For More information on training with me at Les Mills Dunedin, please use the following contact addresses:'
-      ),
-      _react2.default.createElement(
-        'ul',
-        null,
+        'div',
+        { className: 'Contact-Details column is-half box level-left level-item' },
         _react2.default.createElement(
-          'li',
-          null,
-          'Mobile: 027 445 3965'
+          'p',
+          { className: '' },
+          'For More information on training with me at Les Mills Dunedin, please use the following contact addresses:'
         ),
         _react2.default.createElement(
-          'li',
-          null,
-          'Email: maxsymes@hotmail.com'
-        ),
-        _react2.default.createElement(
-          'li',
-          null,
-          'Address: Les Mills, 10/12 Dowling St, Dunedin, 9016'
+          'ul',
+          { className: '' },
+          _react2.default.createElement(
+            'li',
+            null,
+            'Mobile: 027 445 3965'
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            'Email: maxsymes@hotmail.com'
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            'Address: Les Mills, 10/12 Dowling St, Dunedin, 9016'
+          )
         )
       ),
       _react2.default.createElement(
-        'p',
-        null,
+        'div',
+        { className: 'column box level-right level-item is-4' },
         '"Google Map Here"'
       )
     )
@@ -12851,16 +12854,24 @@ var scroll = function scroll(e) {
 var Footer = function Footer(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
-    'div',
-    { className: 'Footer', onClick: function onClick(e) {
+    'footer',
+    {
+      className: 'footer content has-text-centered is-dark level',
+      onClick: function onClick(e) {
         return scroll(e);
-      } },
+      },
+      style: { height: '10vh' }
+    },
     _react2.default.createElement(
-      'a',
-      { href: 'https://www.instagram.com/symesmax' },
-      _react2.default.createElement('img', { src: './images/instagram.png' })
-    ),
-    _react2.default.createElement('img', { src: 'http://placekitten.com/g/200/200' })
+      'span',
+      { className: 'icons' },
+      _react2.default.createElement(
+        'a',
+        { className: 'level-left level-item ', href: 'https://www.instagram.com/symesmax' },
+        _react2.default.createElement('img', { src: './images/instagram.png', style: { height: '10vh' } })
+      ),
+      _react2.default.createElement('img', { className: 'level-right level-item ', src: 'http://placekitten.com/g/200/200', style: { height: '10vh' } })
+    )
   );
 };
 
@@ -13048,7 +13059,7 @@ var Nav = function (_React$Component) {
     key: 'scroll',
     value: function scroll(name) {
       this.setState({ showNav: false });
-      (0, _jump2.default)('.' + name, { offset: 0 });
+      (0, _jump2.default)('.' + name, { offset: -100 });
     }
   }, {
     key: 'renderNavItem',
@@ -13280,7 +13291,7 @@ var Trainers = function Trainers(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'Trainer container has-text-centered' },
+    { className: 'Trainer container' },
     _react2.default.createElement(
       'h1',
       { className: 'title is-fluid' },

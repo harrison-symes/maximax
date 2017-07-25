@@ -13347,30 +13347,35 @@ var Training = function Training(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'Training container' },
-    _react2.default.createElement('div', { className: 'line-separator' }),
+    { className: 'Training container has-text-centered' },
     _react2.default.createElement(
       'h1',
-      null,
+      { className: 'title' },
       'Training'
     ),
     _react2.default.createElement(
       'div',
-      { className: 'content' },
+      { className: 'content box' },
       _react2.default.createElement(
         'h3',
-        null,
-        'In person training @ Les Mills, Dunedin:'
+        { className: 'subtitle' },
+        'In person training @ Les Mills, Dunedin'
       ),
       _react2.default.createElement(
         'h4',
         null,
-        'Sessions start at $30 for 30min.'
+        'Sessions start at ',
+        _react2.default.createElement(
+          'strong',
+          null,
+          '$30'
+        ),
+        ' for 30min.'
       )
     ),
     _react2.default.createElement(
       'div',
-      { className: 'content' },
+      { className: 'content box' },
       _react2.default.createElement(
         'h2',
         null,
@@ -13383,7 +13388,7 @@ var Training = function Training(_ref) {
       ),
       _react2.default.createElement(
         'ul',
-        null,
+        { className: 'content has-text-centered' },
         _react2.default.createElement(
           'li',
           null,
@@ -13412,21 +13417,37 @@ var Training = function Training(_ref) {
       ),
       _react2.default.createElement(
         'p',
-        null,
-        'The first month of programming is $80, which will cover your assessment and paperwork. For all other subsequent months, the cost will be'
+        { className: 'content' },
+        'The first month of programming is ',
+        _react2.default.createElement(
+          'strong',
+          null,
+          '$80'
+        ),
+        ', which will cover your assessment and paperwork.'
+      ),
+      _react2.default.createElement(
+        'p',
+        { className: 'content subtitle' },
+        'For all other subsequent months, the cost will be'
       ),
       _react2.default.createElement(
         'h3',
-        null,
-        '$60 per month'
+        { className: 'subtitle' },
+        _react2.default.createElement(
+          'strong',
+          null,
+          '$60'
+        ),
+        ' per month'
       )
     ),
     _react2.default.createElement(
       'div',
-      { className: 'content' },
+      { className: 'message is-dark' },
       _react2.default.createElement(
         'p',
-        null,
+        { className: 'message-body is-dark' },
         'For More information on training with me at Les Mills Dunedin, please refer to the',
         _react2.default.createElement(
           'a',

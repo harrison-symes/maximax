@@ -12611,10 +12611,10 @@ var About = function About(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'About container has-text-centered columns' },
+    { className: 'About container has-text-centered tile is-anscestor' },
     _react2.default.createElement(
       'div',
-      { className: 'column is-three-quarters content' },
+      { className: 'tile is-parent is-vertical is-6 content' },
       _react2.default.createElement(
         'h1',
         { className: 'title is-fluid ' },
@@ -12622,24 +12622,28 @@ var About = function About(_ref) {
       ),
       _react2.default.createElement(
         'p',
-        { className: 'media' },
+        { className: 'media tile is-child' },
         'My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym. I routinely search the evidence for optimal exercise methods and interventions for each client or problem. Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise. I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you\u2019re moving efficiently.'
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'title tile is-child box' },
+        _react2.default.createElement(
+          'h3',
+          { className: 'title' },
+          'Referrals: '
+        ),
+        _react2.default.createElement(_Referrals2.default, null)
       )
     ),
     _react2.default.createElement(
       'div',
-      { className: 'column is-one-third' },
-      _react2.default.createElement('img', { src: 'http://placekitten.com/g/400/400' })
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'title column media is-one-third' },
+      { className: 'tile is-parent is-vertical is-6' },
       _react2.default.createElement(
-        'h3',
-        { className: 'title' },
-        'Referrals: '
-      ),
-      _react2.default.createElement(_Referrals2.default, null)
+        'div',
+        { className: 'tile is-child' },
+        _react2.default.createElement('img', { src: 'http://placekitten.com/g/400/400' })
+      )
     )
   );
 };

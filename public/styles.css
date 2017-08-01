@@ -97,6 +97,19 @@ body {
   padding: auto;
 }
 
+.Home, .About {
+  padding-top: 10vh;
+}
+
+.line-separator {
+  margin:auto;
+	margin-bottom: 10vh;
+  height:.5vh;
+  width: 80%;
+  background:#232C33;
+  border-bottom:1px solid white;
+}
+
 h2 {
   font-size: 2em;
 }

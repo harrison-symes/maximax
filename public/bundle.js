@@ -12509,9 +12509,13 @@ var App = function App() {
         'div',
         { className: 'app-body' },
         _react2.default.createElement(_Home2.default, null),
+        _react2.default.createElement('div', { className: 'line-separator' }),
         _react2.default.createElement(_Trainers2.default, null),
+        _react2.default.createElement('div', { className: 'line-separator' }),
         _react2.default.createElement(_About2.default, null),
+        _react2.default.createElement('div', { className: 'line-separator' }),
         _react2.default.createElement(_Training2.default, null),
+        _react2.default.createElement('div', { className: 'line-separator' }),
         _react2.default.createElement(_Contact2.default, null)
       ),
       _react2.default.createElement('div', { className: 'line-separator-bottom' }),
@@ -12617,7 +12621,7 @@ var About = function About(_ref) {
       { className: 'tile is-parent is-vertical is-6 content' },
       _react2.default.createElement(
         'h1',
-        { className: 'title is-fluid ' },
+        { className: 'section-title is-fluid ' },
         'About'
       ),
       _react2.default.createElement(
@@ -13311,12 +13315,17 @@ var Trainers = function Trainers(_ref) {
       { className: 'container columns level' },
       _react2.default.createElement(
         'div',
-        { className: 'column level-left' },
+        { className: 'column level-left is-half' },
         _react2.default.createElement('img', { className: 'profile-image', src: '/images/profile2.jpg' })
       ),
       _react2.default.createElement(
         'div',
-        { className: 'column  level-right is-two-thirds' },
+        { className: 'column  level-right is-half' },
+        _react2.default.createElement(
+          'h1',
+          { className: 'section-title is-fluid' },
+          'Trainer'
+        ),
         _react2.default.createElement(
           'h3',
           { className: 'title is-fluid ' },

@@ -5,7 +5,7 @@ const Trainers = ({dispatch}) => (
   <div className="Trainer container has-text-centered">
     <div className="container columns level">
       <div className="column level-left">
-        <img className="profile-image" src="/images/profile.jpg"></img>
+        <img className="profile-image" src="/images/profile2.jpg"></img>
       </div>
       <div className="column  level-right is-two-thirds">
         <h3 className="title is-fluid ">Max Symes</h3>

@@ -13307,26 +13307,21 @@ var Trainers = function Trainers(_ref) {
     'div',
     { className: 'Trainer container has-text-centered' },
     _react2.default.createElement(
-      'h1',
-      { className: 'title is-fluid' },
-      'Trainer'
-    ),
-    _react2.default.createElement(
-      'h3',
-      { className: 'subtitle is-fluid ' },
-      'Max Symes'
-    ),
-    _react2.default.createElement(
       'div',
-      { className: 'container columns is-gapless level' },
+      { className: 'container columns level' },
       _react2.default.createElement(
         'div',
-        { className: 'column  level-left' },
+        { className: 'column level-left' },
         _react2.default.createElement('img', { className: 'profile-image', src: '/images/profile.jpg' })
       ),
       _react2.default.createElement(
         'div',
-        { className: 'column media level-right is-two-thirds' },
+        { className: 'column  level-right is-two-thirds' },
+        _react2.default.createElement(
+          'h3',
+          { className: 'title is-fluid ' },
+          'Max Symes'
+        ),
         _react2.default.createElement(
           'p',
           { className: 'content' },

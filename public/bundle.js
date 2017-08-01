@@ -12956,7 +12956,7 @@ var Home = function Home(_ref) {
   return _react2.default.createElement(
     'section',
     {
-      className: 'Home hero is-fullheight  is-light is-bold',
+      className: 'Home is-fullheight  is-light is-bold',
       style: { cursor: 'pointer' },
       onClick: function onClick() {
         return jumpDown();
@@ -12971,7 +12971,7 @@ var Home = function Home(_ref) {
         { className: 'container' },
         _react2.default.createElement(
           'h1',
-          { className: 'title' },
+          { className: 'welcome-title' },
           'Welcome'
         ),
         _react2.default.createElement(
@@ -13309,21 +13309,25 @@ var Trainers = function Trainers(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'Trainer container has-text-centered' },
+    { className: 'Trainer container has-text-centered tile is-anscestor' },
     _react2.default.createElement(
       'div',
-      { className: 'container columns level' },
+      { className: 'container tile is-parent is-vertical is-6 content' },
       _react2.default.createElement(
         'div',
-        { className: 'column level-left is-half' },
+        { className: 'tile is-child level-left' },
         _react2.default.createElement('img', { className: 'profile-image', src: '/images/profile2.jpg' })
-      ),
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'tile is-parent is-vertical is-6 content' },
       _react2.default.createElement(
         'div',
-        { className: 'column  level-right is-half' },
+        { className: 'tile is-child' },
         _react2.default.createElement(
           'h1',
-          { className: 'section-title is-fluid' },
+          { className: 'section-title title is-fluid' },
           'Trainer'
         ),
         _react2.default.createElement(
@@ -13333,7 +13337,7 @@ var Trainers = function Trainers(_ref) {
         ),
         _react2.default.createElement(
           'p',
-          { className: 'content' },
+          { className: 'media' },
           'I received my Honour\u2019s degree in Physical Education with a concentration in Exercise Prescription through the University of Otago. In addition to being a Les Mills Personal Trainer, I have worked as Strength & Conditioning Intern for the Pulse Energy Highlanders (2017) as well as a tutor at the University of Otago.'
         )
       )

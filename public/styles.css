@@ -97,8 +97,27 @@ body {
   padding: auto;
 }
 
-.Home, .About {
-  padding-top: 10vh;
+.Home {
+	background-image: url("./images/splash.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+	box-shadow: 5 5 20px #C3C5C7;
+	color: white;
+
+}
+
+@media (orientation: portrait) {
+  .Home {
+    background-image: url("./images/splashTwo.jpg");
+
+  }
+}
+
+.welcome-title {
+  padding-top: 15vh;
 }
 
 .line-separator {

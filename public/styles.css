@@ -1,5 +1,5 @@
 body {
-  background-color: #EBEBEC;
+  /*background-color: #EBEBEC;*/
   color: #232C33;
   margin: 0px;
   width: 100%;
@@ -13,7 +13,7 @@ body {
   position: fixed;
   top: 0px;
   display: inline-block;
-  background-color: #73787D;
+  background-color: black;
   min-height: 10vh;
   margin-left: 0;
   /*text-align: center;*/
@@ -61,7 +61,7 @@ body {
 	font-size: 1.4em;
   list-style-type: none;
   text-align: left;
-	border-color: rgba(195,197,199, 0.7);
+  font-size: 1em;
 }
 
 .Home {
@@ -69,4 +69,37 @@ body {
   text-align: center;
   font-size: 3em;
   z-index: 0;
+}
+
+.About {
+  margin-top: 100px;
+}
+
+.content {
+  font-size: 1.4em;
+  margin: auto;
+
+}
+
+.container {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.title, .subtitle {
+  font-size: 3em;
+}
+
+.profile-image {
+  width: 300px;
+  margin: auto;
+  padding: auto;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h1 {
+  font-size: 3em;
 }

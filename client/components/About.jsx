@@ -16,7 +16,10 @@ const About = ({dispatch}) => (
     </div>
     <div className="tile is-parent is-vertical is-6">
       <div className="tile is-child">
-        <img src="http://placekitten.com/g/400/400"></img>
+        <img src="/images/fun.jpg"></img>
+      </div>
+      <div className="tile is-child">
+        <img src="/images/fun2.jpg"></img>
       </div>
     </div>
   </div>

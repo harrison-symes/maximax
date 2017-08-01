@@ -8,13 +8,14 @@ class Nav extends React.Component {
   constructor(props) {
     super(props)
     var rainbow = new Rainbow();
-    rainbow.setNumberRange(0, 1000);
-    rainbow.setSpectrum('000000', 'A0C1D1');
+    rainbow.setNumberRange(0, 500);
+    rainbow.setSpectrum('999999', 'A0C1D1');
     this.state = {
       showNav: false,
       rainbow,
       cur: 0,
-      color: 'white'
+      color: 'white',
+      iterator: -1
     }
   }
   componentDidMount() {
@@ -22,15 +23,19 @@ class Nav extends React.Component {
     setInterval(this.changeColour.bind(this), 1);
   }
   changeColour() {
+    let {cur, iterator, showNav} = this.state
+    if (showNav) {
+      iterator = (cur == 500 || cur == 0) ? iterator * -1 : iterator
       let color = this.state.rainbow.colourAt(this.state.cur)
-      this.setState({color, cur: this.state.cur + 1})
+      this.setState({color, cur: cur + iterator, iterator})
+    }
   }
   toggleNav(e) {
     e.preventDefault()
-    this.setState({showNav: !this.state.showNav, cur: 0})
+    this.setState({showNav: !this.state.showNav, cur: 0, iterator: -1})
   }
   scroll(name) {
-    this.setState({showNav: false})
+    this.setState({showNav: false, iterator: -1, cur: 0})
     jump(`.${name}`, {offset: -100})
   }
   renderNavItem(item) {

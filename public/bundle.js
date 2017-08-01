@@ -12642,7 +12642,12 @@ var About = function About(_ref) {
       _react2.default.createElement(
         'div',
         { className: 'tile is-child' },
-        _react2.default.createElement('img', { src: 'http://placekitten.com/g/400/400' })
+        _react2.default.createElement('img', { src: '/images/fun.jpg' })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'tile is-child' },
+        _react2.default.createElement('img', { src: '/images/fun2.jpg' })
       )
     )
   );
@@ -13026,13 +13031,14 @@ var Nav = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
 
     var rainbow = new _rainbowvis2.default();
-    rainbow.setNumberRange(0, 1000);
-    rainbow.setSpectrum('000000', 'A0C1D1');
+    rainbow.setNumberRange(0, 500);
+    rainbow.setSpectrum('999999', 'A0C1D1');
     _this.state = {
       showNav: false,
       rainbow: rainbow,
       cur: 0,
-      color: 'white'
+      color: 'white',
+      iterator: -1
     };
     return _this;
   }
@@ -13046,19 +13052,27 @@ var Nav = function (_React$Component) {
   }, {
     key: 'changeColour',
     value: function changeColour() {
-      var color = this.state.rainbow.colourAt(this.state.cur);
-      this.setState({ color: color, cur: this.state.cur + 1 });
+      var _state = this.state,
+          cur = _state.cur,
+          iterator = _state.iterator,
+          showNav = _state.showNav;
+
+      if (showNav) {
+        iterator = cur == 500 || cur == 0 ? iterator * -1 : iterator;
+        var color = this.state.rainbow.colourAt(this.state.cur);
+        this.setState({ color: color, cur: cur + iterator, iterator: iterator });
+      }
     }
   }, {
     key: 'toggleNav',
     value: function toggleNav(e) {
       e.preventDefault();
-      this.setState({ showNav: !this.state.showNav, cur: 0 });
+      this.setState({ showNav: !this.state.showNav, cur: 0, iterator: -1 });
     }
   }, {
     key: 'scroll',
     value: function scroll(name) {
-      this.setState({ showNav: false });
+      this.setState({ showNav: false, iterator: -1, cur: 0 });
       (0, _jump2.default)('.' + name, { offset: -100 });
     }
   }, {
@@ -13291,7 +13305,7 @@ var Trainers = function Trainers(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'Trainer container' },
+    { className: 'Trainer container has-text-centered' },
     _react2.default.createElement(
       'h1',
       { className: 'title is-fluid' },
@@ -13299,7 +13313,7 @@ var Trainers = function Trainers(_ref) {
     ),
     _react2.default.createElement(
       'h3',
-      { className: 'subtitle' },
+      { className: 'subtitle is-fluid ' },
       'Max Symes'
     ),
     _react2.default.createElement(
@@ -13307,15 +13321,15 @@ var Trainers = function Trainers(_ref) {
       { className: 'container columns is-gapless level' },
       _react2.default.createElement(
         'div',
-        { className: 'column is-two-thirds level-left' },
-        _react2.default.createElement('img', { src: 'http://placekitten.com/g/400/400' })
+        { className: 'column  level-left' },
+        _react2.default.createElement('img', { className: 'profile-image', src: '/images/profile.jpg' })
       ),
       _react2.default.createElement(
         'div',
-        { className: 'column media content level-right' },
+        { className: 'column media level-right is-two-thirds' },
         _react2.default.createElement(
           'p',
-          null,
+          { className: 'content' },
           'I received my Honour\u2019s degree in Physical Education with a concentration in Exercise Prescription through the University of Otago. In addition to being a Les Mills Personal Trainer, I have worked as Strength & Conditioning Intern for the Pulse Energy Highlanders (2017) as well as a tutor at the University of Otago.'
         )
       )

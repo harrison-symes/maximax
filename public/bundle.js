@@ -12684,18 +12684,18 @@ var Contact = function Contact(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'Contact container has-text-centered' },
-    _react2.default.createElement(
-      'h1',
-      { className: 'title is-fluid' },
-      'Contact'
-    ),
+    { className: 'Contact container tile is-anscestor has-text-centered' },
     _react2.default.createElement(
       'div',
-      { className: 'columns has-text-centered level' },
+      { className: 'tile is-parent is-vertical is-6 content box' },
+      _react2.default.createElement(
+        'h1',
+        { className: 'title is-fluid' },
+        'Contact'
+      ),
       _react2.default.createElement(
         'div',
-        { className: 'Contact-Details column is-half box level-left level-item' },
+        { className: 'Contact-Details media' },
         _react2.default.createElement(
           'p',
           { className: '' },
@@ -12720,15 +12720,27 @@ var Contact = function Contact(_ref) {
             'Address: Les Mills, 10/12 Dowling St, Dunedin, 9016'
           )
         )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'column box level-right level-item is-4' },
-        '"Google Map Here"'
       )
     )
   );
 };
+
+{/* <div className="columns has-text-centered level">
+   <div className="Contact-Details column is-half box level-left level-item">
+     <p className="">For More information on training with me at Les Mills Dunedin, please use the following contact addresses:</p>
+     <ul className="">
+       <li>Mobile: 027 445 3965</li>
+       <li>Email: maxsymes@hotmail.com</li>
+       <li>Address: Les Mills,
+         10/12 Dowling St,
+         Dunedin, 9016</li>
+       </ul>
+     </div>
+   <div className="column box level-right level-item is-4">
+     "Google Map Here"
+   </div>
+  </div>
+  </div> */}
 
 var mapStateToProps = function mapStateToProps(state) {};
 
@@ -12864,22 +12876,46 @@ var Footer = function Footer(_ref) {
   var dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'footer',
-    {
-      className: 'footer content has-text-centered is-dark level',
-      onClick: function onClick(e) {
-        return scroll(e);
-      },
-      style: { height: '10vh' }
-    },
+    { className: 'footer' },
     _react2.default.createElement(
-      'span',
-      { className: 'icons' },
+      'div',
+      { className: 'container' },
       _react2.default.createElement(
-        'a',
-        { className: 'level-left level-item ', href: 'https://www.instagram.com/symesmax' },
-        _react2.default.createElement('img', { src: './images/instagram.png', style: { height: '10vh' } })
-      ),
-      _react2.default.createElement('img', { className: 'level-right level-item ', src: 'http://placekitten.com/g/200/200', style: { height: '10vh' } })
+        'div',
+        { className: 'content has-text-centered' },
+        _react2.default.createElement(
+          'p',
+          null,
+          'Built by ',
+          _react2.default.createElement(
+            'a',
+            { href: 'https://github.com/harrison-symes' },
+            'Harrison Symes'
+          ),
+          '. The source code is licensed',
+          _react2.default.createElement(
+            'a',
+            { href: 'http://opensource.org/licenses/mit-license.php' },
+            ' MIT'
+          ),
+          '. The website content is licensed ',
+          _react2.default.createElement(
+            'a',
+            { href: 'http://creativecommons.org/licenses/by-nc-sa/4.0/' },
+            'CC ANS 4.0'
+          ),
+          '.'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'a',
+            { className: 'icon', href: 'https://github.com/harrison-symes/maximax' },
+            _react2.default.createElement('i', { className: 'fa fa-github' })
+          )
+        )
+      )
     )
   );
 };

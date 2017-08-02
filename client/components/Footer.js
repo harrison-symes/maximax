@@ -7,16 +7,25 @@ const scroll = (e) => {
 }
 
 const Footer = ({dispatch}) => (
-  <footer
-    className="footer content has-text-centered is-dark level"
-    onClick={(e) => scroll(e)}
-    style={{height: '10vh'}}
-  >
-    <span className="icons">
-      <a className="level-left level-item "href="https://www.instagram.com/symesmax"><img src="./images/instagram.png" style={{height: '10vh'}}/></a>
-      <img className="level-right level-item " src="http://placekitten.com/g/200/200" style={{height: '10vh'}} />
-    </span>
-  </footer>
+
+  <footer className="footer">
+  <div className="container">
+    <div className="content has-text-centered">
+      <p>
+         Built by <a href="https://github.com/harrison-symes">Harrison Symes</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php"> MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+      </p>
+      <p>
+        <a className="icon" href="https://github.com/harrison-symes/maximax">
+          <i className="fa fa-github"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
 )
 
 const mapStateToProps = (state) => {

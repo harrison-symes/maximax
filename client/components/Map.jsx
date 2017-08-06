@@ -1,9 +1,10 @@
 import React from 'react'
 import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import _ from 'underscore'
 const googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.27&libraries=places,geometry&key=AIzaSyBXthm1gu3zhhwKzWA0EPSW_TI-XY9MEIU"
 
 //AIzaSyBXthm1gu3zhhwKzWA0EPSW_TI-XY9MEIU
-const google = window.google;
+// const google = window.google;
 
 const GettingStartedGoogleMap = withGoogleMap(props => (
   <GoogleMap
@@ -11,7 +12,6 @@ const GettingStartedGoogleMap = withGoogleMap(props => (
     defaultZoom={3}
     defaultCenter={{ lat: -25.363882, lng: 131.044922 }}
     onClick={props.onMapClick}
-    googleMapURL={googleMapURL}
   >
     {props.markers.map((marker, index) => (
       <Marker
@@ -24,6 +24,7 @@ const GettingStartedGoogleMap = withGoogleMap(props => (
 ))
 
 export default function Map(props) {
+  let markers = []
   return (
     <GettingStartedGoogleMap
       containerElement={

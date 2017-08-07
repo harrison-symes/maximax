@@ -1,10 +1,8 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {connect} from 'react-redux'
 import jump from 'jump.js'
 import Rainbow from 'rainbowvis.js'
 
-class Nav extends React.Component {
+export default class Nav extends React.Component {
   constructor(props) {
     super(props)
     var rainbow = new Rainbow();
@@ -19,7 +17,6 @@ class Nav extends React.Component {
     }
   }
   componentDidMount() {
-    console.log("mounted", this.state);
     setInterval(this.changeColour.bind(this), 1);
   }
   changeColour() {
@@ -95,5 +92,3 @@ class Nav extends React.Component {
     </div>
   }
 }
-
-export default connect()(Nav)

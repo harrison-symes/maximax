@@ -14,31 +14,19 @@ export default class Map extends React.Component {
         width: '40vh'
     }
   }
-
   componentDidMount () {
     this.loadMap(defaultCenter)
   }
-
-  componentWillReceiveProps ({windowWidth}) {
-    let {width, height} = this.state
-    if (windowWidth < 500) this.setState({width: '40vh', height: '40vh'})
-    else this.setState({width: '100%', height: '100%'})
-    this.loadMap(defaultCenter)
-  }
-
   loadMap (center) {
-    console.log({center});
     this.map = new google.maps.Map(this.refs.map, {
       center,
       zoom: 17
     })
-    console.log(this.map);
     this.marker = new google.maps.Marker({
       position: center,
       map: this.map
     })
   }
-
   render () {
     let {height, width} = this.state
     return (

@@ -1,10 +1,7 @@
 import React from 'react'
-import {connect} from 'react-redux'
-
 import Referrals from './Referrals'
 
-
-const About = ({dispatch}) => (
+const About = () => (
   <div className="About container has-text-centered tile is-anscestor" >
     <div className="tile is-parent is-vertical is-6 content">
       <h1 className="section-title is-fluid ">About</h1>
@@ -25,8 +22,4 @@ const About = ({dispatch}) => (
   </div>
 )
 
-const mapStateToProps = (state) => {
-
-}
-
-export default connect()(About)
+export default About

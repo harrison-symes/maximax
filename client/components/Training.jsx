@@ -1,14 +1,12 @@
 import React from 'react'
-import {connect} from 'react-redux'
 import jump from 'jump.js'
 
 const scrollToContacts = () => {
   jump('.Contact', {offset: 0})
 }
 
-const Training = ({dispatch}) => (
+const Training = () => (
   <div className="Training container has-text-centered tile is-anscestor">
-
     <div className="tile is-parent is-vertical is-6 content">
       <div className="tile is-child box">
         <h1 className="title">In person training @ Les Mills, Dunedin:</h1>
@@ -18,7 +16,6 @@ const Training = ({dispatch}) => (
         <img src="/images/inPerson.jpg"></img>
       </div>
     </div>
-
     <div className="tile is-parent is-vertical is-6">
       <div className="tile is-child ">
         <div className="tile is-child content box">
@@ -47,8 +44,4 @@ const Training = ({dispatch}) => (
   </div>
 )
 
-const mapStateToProps = (state) => {
-
-}
-
-export default connect()(Training)
+export default Training

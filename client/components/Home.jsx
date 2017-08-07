@@ -1,12 +1,11 @@
 import React from 'react'
-import {connect} from 'react-redux'
 import jump from 'jump.js'
 
 const jumpDown = () => {
   jump('.Trainer', {offset: -85})
 }
 
-const Home = ({dispatch}) => (
+const Home = () => (
   <section
     className="Home is-fullheight  is-light is-bold"
     style={{cursor: 'pointer'}}
@@ -23,8 +22,4 @@ const Home = ({dispatch}) => (
   </section>
 )
 
-const mapStateToProps = (state) => {
-
-}
-
-export default connect()(Home)
+export default Home

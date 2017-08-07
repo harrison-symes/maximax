@@ -12516,7 +12516,8 @@ var App = function App() {
         _react2.default.createElement('div', { className: 'line-separator' }),
         _react2.default.createElement(_Training2.default, null),
         _react2.default.createElement('div', { className: 'line-separator' }),
-        _react2.default.createElement(_Contact2.default, null)
+        _react2.default.createElement(_Contact2.default, null),
+        _react2.default.createElement('div', { className: 'line-separator' })
       ),
       _react2.default.createElement('div', { className: 'line-separator-bottom' }),
       _react2.default.createElement(_Footer2.default, null)
@@ -12892,7 +12893,17 @@ var Footer = function Footer(_ref) {
     { className: 'footer' },
     _react2.default.createElement(
       'div',
+      { className: 'container has-text-centered' },
+      _react2.default.createElement(
+        'a',
+        { href: 'https://www.instagram.com/symesmax' },
+        _react2.default.createElement('img', { style: { height: '20vh' }, src: './images/instagram.png' })
+      )
+    ),
+    _react2.default.createElement(
+      'div',
       { className: 'container' },
+      _react2.default.createElement('div', { className: 'line-separator' }),
       _react2.default.createElement(
         'div',
         { className: 'content has-text-centered' },

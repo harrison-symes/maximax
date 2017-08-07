@@ -23,7 +23,7 @@ const App = () => (
         <Training />
         <div className="line-separator"></div>
         <Contact />
-        {/* <div className="line-separator"></div> */}
+        <div className="line-separator"></div>
 
       </div>
       <div className="line-separator-bottom"></div>

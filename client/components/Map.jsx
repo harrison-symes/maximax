@@ -30,6 +30,6 @@ export default class Map extends React.Component {
   render () {
     let {height, width} = this.state
     return (
-        <div style={{height, width}} ref="map" >I should be a map!</div>
+        <div className="map" ref="map" >I should be a map!</div>
     )}
   }

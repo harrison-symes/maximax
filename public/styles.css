@@ -52,16 +52,24 @@ body {
   /*margin-left: 90%;*/
 }
 
-.content li:before {
+.list-item:before {
   content: "🏋️ - ";
+  text-align: left;
 }
 
-.content ul {
-  width: 80%;
-	font-size: 1.4em;
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+	font-size: 0.5em;
   list-style-type: none;
   text-align: left;
   font-size: 1em;
+  overflow: auto;
+}
+
+li {
+  list-style-type: none;
 }
 
 .Home {
@@ -108,11 +116,21 @@ body {
 	color: white;
 
 }
+.map {
+  height: 100%;
+  width: 100%;
+}
 
 @media (orientation: portrait) {
   .Home {
     background-image: url("./images/splashTwo.jpg");
 
+  }
+  .map {
+    height: 50vh;
+    width: 80vw;
+    margin: auto;
+    padding: auto;
   }
 }
 

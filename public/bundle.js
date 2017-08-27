@@ -11541,7 +11541,8 @@ var Contact = function Contact() {
       _react2.default.createElement(
         'h1',
         { className: 'title is-fluid' },
-        'Contact'
+        'Contact ',
+        _react2.default.createElement('img', { src: '/images/icons/compass.svg', className: 'jam-icon' })
       ),
       _react2.default.createElement(
         'div',
@@ -11553,18 +11554,21 @@ var Contact = function Contact() {
         ),
         _react2.default.createElement(
           'p',
-          { className: 'list-item' },
-          'Mobile: 027 445 3965'
+          null,
+          _react2.default.createElement('img', { src: '/images/icons/phone.svg', className: 'jam-icon' }),
+          ' Mobile: 027 445 3965'
         ),
         _react2.default.createElement(
           'p',
-          { className: 'list-item' },
-          'Email: maxsymes@hotmail.com'
+          null,
+          _react2.default.createElement('img', { src: 'images/icons/envelope-open.svg', className: 'jam-icon' }),
+          ' Email: maxsymes@hotmail.com'
         ),
         _react2.default.createElement(
           'p',
-          { className: 'list-item' },
-          'Address: Les Mills, 10/12 Dowling St, Dunedin, 9016'
+          null,
+          _react2.default.createElement('img', { src: 'images/icons/compass.svg', className: 'jam-icon' }),
+          ' Address: Les Mills, 10/12 Dowling St, Dunedin, 9016'
         )
       )
     ),

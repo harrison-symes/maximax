@@ -11478,17 +11478,13 @@ var About = function About() {
       _react2.default.createElement(
         'p',
         { className: 'media tile is-child' },
-        'My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym. I routinely search the evidence for optimal exercise methods and interventions for each client or problem. Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise. I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you\u2019re moving efficiently.'
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'title tile is-child box' },
-        _react2.default.createElement(
-          'h3',
-          { className: 'title' },
-          'Referrals: '
-        ),
-        _react2.default.createElement(_Referrals2.default, null)
+        'My primary goal is to provide efficient client care. I am conscious and extremely sensitive to the various demographics presented in the gym.',
+        _react2.default.createElement('br', null),
+        'I routinely search the evidence for optimal exercise methods and interventions for each client or problem.',
+        _react2.default.createElement('br', null),
+        'Although prepared in a variety of bodies of knowledge, I specialise in applied biomechanics as it relates to programme design and corrective exercise.',
+        _react2.default.createElement('br', null),
+        'I can evaluate your movement and identify flaws in technique to not only mitigate the risk of injury but also ensure you\u2019re moving efficiently.'
       )
     ),
     _react2.default.createElement(
@@ -11537,16 +11533,15 @@ var Contact = function Contact() {
     { className: 'Contact container tile is-anscestor has-text-centered' },
     _react2.default.createElement(
       'div',
-      { className: 'tile is-parent is-vertical is-6 content' },
+      { className: 'tile media is-parent is-vertical is-6 content' },
       _react2.default.createElement(
         'h1',
         { className: 'title is-fluid' },
-        'Contact ',
-        _react2.default.createElement('img', { src: '/images/icons/compass.svg', className: 'jam-icon' })
+        'Contact'
       ),
       _react2.default.createElement(
         'div',
-        { className: 'Contact-Details tile is-child' },
+        { className: 'Contact-Details is-left tile is-child' },
         _react2.default.createElement(
           'p',
           { className: '' },
@@ -11555,7 +11550,7 @@ var Contact = function Contact() {
         _react2.default.createElement(
           'p',
           null,
-          _react2.default.createElement('img', { src: '/images/icons/phone.svg', className: 'jam-icon' }),
+          _react2.default.createElement('img', { src: 'images/icons/phone.svg', className: 'jam-icon' }),
           ' Mobile: 027 445 3965'
         ),
         _react2.default.createElement(
@@ -11569,6 +11564,12 @@ var Contact = function Contact() {
           null,
           _react2.default.createElement('img', { src: 'images/icons/compass.svg', className: 'jam-icon' }),
           ' Address: Les Mills, 10/12 Dowling St, Dunedin, 9016'
+        ),
+        _react2.default.createElement(
+          'a',
+          { href: 'https://www.instagram.com/symesmax' },
+          _react2.default.createElement('img', { className: 'jam-icon', src: 'images/icons/instagram.svg' }),
+          ' Instagram @symesmax'
         )
       )
     ),
@@ -11617,17 +11618,7 @@ var Footer = function Footer() {
     { className: 'footer' },
     _react2.default.createElement(
       'div',
-      { className: 'container has-text-centered' },
-      _react2.default.createElement(
-        'a',
-        { href: 'https://www.instagram.com/symesmax' },
-        _react2.default.createElement('img', { style: { height: '20vh' }, src: './images/instagram.png' })
-      )
-    ),
-    _react2.default.createElement(
-      'div',
       { className: 'container' },
-      _react2.default.createElement('div', { className: 'line-separator' }),
       _react2.default.createElement(
         'div',
         { className: 'content has-text-centered' },
@@ -11694,7 +11685,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Header = function Header() {
   return _react2.default.createElement(
     'header',
-    { className: 'Header nav hero leveis-bold is-dark' },
+    { className: 'Header nav hero level is-bold is-dark' },
     _react2.default.createElement(_Nav2.default, null)
   );
 };
@@ -11751,7 +11742,7 @@ var Home = function Home() {
         _react2.default.createElement(
           'h2',
           { className: 'subtitle' },
-          '\u2186'
+          _react2.default.createElement('img', { className: 'icon', src: '/images/icons/angle-down.svg' })
         )
       )
     ),
@@ -11974,7 +11965,8 @@ var Nav = function (_React$Component) {
 
       return _react2.default.createElement(
         'span',
-        { className: 'Nav-Item nav-item has-text-centered title link column', onClick: function onClick(e) {
+        { className: 'Nav-Item nav-item has-text-centered title link column',
+          style: { marginTop: 0, marginRight: 0 }, onClick: function onClick(e) {
             return _this4.scroll('Contact');
           } },
         _react2.default.createElement(

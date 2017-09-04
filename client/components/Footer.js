@@ -7,11 +7,7 @@ const scroll = (e) => {
 
 const Footer = () => (
   <footer className="footer">
-    <div className="container has-text-centered">
-      <a href="https://www.instagram.com/symesmax"><img style={{height: '20vh'}}src="./images/instagram.png" /></a>
-    </div>
     <div className="container">
-      <div className="line-separator"></div>
       <div className="content has-text-centered">
         <p>
            Built by <a href="https://github.com/harrison-symes">Harrison Symes</a>. The source code is licensed

@@ -56,7 +56,8 @@ export default class Nav extends React.Component {
   }
   renderContactButton() {
     return (
-      <span className="Nav-Item nav-item has-text-centered title link column" onClick={(e) => this.scroll('Contact')}>
+      <span className="Nav-Item nav-item has-text-centered title link column"
+        style={{marginTop: 0, marginRight: 0}} onClick={(e) => this.scroll('Contact')}>
         <h2
           className="Contact-Button"
           style={{color: `#` + this.state.color}}

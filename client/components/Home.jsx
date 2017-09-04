@@ -15,7 +15,7 @@ const Home = () => (
     <div className="hero-body">
       <div className="container">
         <h1 className="welcome-title">Welcome</h1>
-        <h2 className="subtitle">ↆ</h2>
+        <h2 className="subtitle"><img className="icon" src="/images/icons/angle-down.svg"/></h2>
       </div>
     </div>
     <div className="hero-foot"></div>

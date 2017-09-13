@@ -11551,25 +11551,49 @@ var Contact = function Contact() {
           'p',
           null,
           _react2.default.createElement('img', { src: 'images/icons/phone.svg', className: 'jam-icon' }),
-          ' Mobile: 027 445 3965'
+          ' ',
+          _react2.default.createElement(
+            'strong',
+            null,
+            'Mobile:'
+          ),
+          ' 027 445 3965'
         ),
         _react2.default.createElement(
           'p',
           null,
           _react2.default.createElement('img', { src: 'images/icons/envelope-open.svg', className: 'jam-icon' }),
-          ' Email: maxsymes@hotmail.com'
+          ' ',
+          _react2.default.createElement(
+            'strong',
+            null,
+            'Email:'
+          ),
+          ' maxsymes@hotmail.com'
         ),
         _react2.default.createElement(
           'p',
           null,
           _react2.default.createElement('img', { src: 'images/icons/compass.svg', className: 'jam-icon' }),
-          ' Address: Les Mills, 10/12 Dowling St, Dunedin, 9016'
+          ' ',
+          _react2.default.createElement(
+            'strong',
+            null,
+            'Address:'
+          ),
+          ' Les Mills, 10/12 Dowling St, Dunedin, 9016'
         ),
         _react2.default.createElement(
           'a',
           { href: 'https://www.instagram.com/symesmax' },
           _react2.default.createElement('img', { className: 'jam-icon', src: 'images/icons/instagram.svg' }),
-          ' Instagram @symesmax'
+          ' ',
+          _react2.default.createElement(
+            'strong',
+            null,
+            'Instagram:'
+          ),
+          ' @symesmax'
         )
       )
     ),
@@ -11927,15 +11951,11 @@ var Nav = function (_React$Component) {
       var _this2 = this;
 
       return _react2.default.createElement(
-        'span',
+        'a',
         { className: 'Nav-Item nav-item has-text-centered title link column', onClick: function onClick(e) {
             return _this2.scroll(item);
           } },
-        _react2.default.createElement(
-          'h2',
-          null,
-          item
-        )
+        item
       );
     }
   }, {
@@ -12014,7 +12034,7 @@ var Nav = function (_React$Component) {
               { className: 'level-item has-text-centered', onClick: function onClick(e) {
                   return scroll(e, 'Home');
                 } },
-              _react2.default.createElement('img', { src: 'http://bulma.io/images/bulma-type.png', style: { height: '30px' } }),
+              _react2.default.createElement('img', { src: './images/MaxLogo.png', style: { height: '30px' } }),
               this.renderNavIcon()
             ),
             this.renderOption()
@@ -12178,7 +12198,10 @@ var Trainer = function Trainer() {
         _react2.default.createElement(
           "p",
           { className: "media" },
-          "I received my Honour\u2019s degree in Physical Education with a concentration in Exercise Prescription through the University of Otago. In addition to being a Les Mills Personal Trainer, I have worked as Strength & Conditioning Intern for the Pulse Energy Highlanders (2017) as well as a tutor at the University of Otago."
+          "I received my Honour\u2019s degree in Physical Education with a concentration in Exercise Prescription through the University of Otago. ",
+          _react2.default.createElement("br", null),
+          _react2.default.createElement("br", null),
+          " In addition to being a Les Mills Personal Trainer, I have worked as Strength & Conditioning Intern for the Pulse Energy Highlanders (2017) as well as a tutor at the University of Otago."
         )
       )
     )
@@ -12250,7 +12273,7 @@ var Training = function Training() {
       { className: 'tile is-parent is-vertical is-6' },
       _react2.default.createElement(
         'div',
-        { className: 'tile is-child box' },
+        { className: 'tile is-child is-left' },
         _react2.default.createElement(
           'div',
           { className: 'tile is-child content' },
@@ -12267,7 +12290,7 @@ var Training = function Training() {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'tile is-child content has-text-centered' },
+          { className: 'tile is-child content' },
           _react2.default.createElement(
             'p',
             { className: 'list-item' },
@@ -12275,7 +12298,7 @@ var Training = function Training() {
             _react2.default.createElement(
               'a',
               {
-                style: { color: 'blue', cursor: 'pointer' },
+                style: { cursor: 'pointer' },
                 onClick: function onClick() {
                   return scrollToContacts();
                 } },

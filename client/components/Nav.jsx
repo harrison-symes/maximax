@@ -37,9 +37,7 @@ export default class Nav extends React.Component {
   }
   renderNavItem(item) {
     return (
-      <span className="Nav-Item nav-item has-text-centered title link column" onClick={(e) => this.scroll(item)}>
-        <h2>{item}</h2>
-      </span>
+        <a className="Nav-Item nav-item has-text-centered title link column" onClick={(e) => this.scroll(item)}>{item}</a>
     )
   }
   renderNavIcon() {
@@ -84,7 +82,8 @@ export default class Nav extends React.Component {
       <div className="container">
         <div className="nav-left">
           <span className="level-item has-text-centered" onClick={(e) => scroll(e, 'Home')}>
-            <img src="http://bulma.io/images/bulma-type.png" style={{height: '30px'}}/>
+            {/* <h1 className="title">Max Symes Personal Trainer</h1> */}
+            <img src="./images/MaxLogo.png" style={{height: '30px'}}/>
             {this.renderNavIcon()}
           </span>
           {this.renderOption()}

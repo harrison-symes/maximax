@@ -17,15 +17,15 @@ const Training = () => (
       </div>
     </div>
     <div className="tile is-parent is-vertical is-6">
-      <div className="tile is-child box">
+      <div className="tile is-child is-left">
         <div className="tile is-child content">
           <h1 className="title">Online Coaching:</h1>
           <h3 className="subtitle">To get started....</h3>
         </div>
-        <div className="tile is-child content has-text-centered">
+        <div className="tile is-child content">
           <p className="list-item">get in
             <a
-              style={{color: 'blue', cursor: 'pointer'}}
+              style={{cursor: 'pointer'}}
               onClick={() => scrollToContacts()}>
               {" Contact "}
             </a>

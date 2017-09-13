@@ -1,10 +1,9 @@
 body {
-  /*background-color: #EBEBEC;*/
   color: #232C33;
   margin: 0px;
   width: 100%;
   overflow: hidden;
-  /*font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;*/
+  font-family: Cambria;
 }
 
 .nav {
@@ -16,9 +15,7 @@ body {
   background-color: black;
   min-height: 10vh;
   margin-left: 0;
-  /*text-align: center;*/
   font-size: 1em;
-  /*text-overflow: clip;*/
   opacity: 1;
   z-index: 100;
 }
@@ -31,6 +28,7 @@ body {
 }
 
 .Nav-Item h2 {
+  font-family: Cambria;
   padding-bottom: 0px;
   font-size: 1em;
   margin: 0;
@@ -46,10 +44,8 @@ body {
 .Nav-Icon {
   float: right;
   cursor: pointer;
-  /*position: fixed;*/
   margin-top: 0;
   font-size: 2em;
-  /*margin-left: 90%;*/
 }
 
 .list-item:before {
@@ -104,8 +100,6 @@ li {
 }
 
 .profile-image {
-  /*width: 300px;*/
-  /*height: 70vh;*/
   margin: auto;
   padding: auto;
 }
@@ -129,7 +123,6 @@ li {
 @media (orientation: portrait) {
   .Home {
     background-image: url("./images/splashTwo.jpg");
-
   }
   .map {
     height: 50vh;
@@ -139,17 +132,29 @@ li {
   }
 }
 
-.welcome-title {
+.welcome-title, .welcome-arrow {
   padding-top: 15vh;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: #1fc8db;
 }
 
 .line-separator {
+  margin-top: 10vh;
   margin:auto;
 	margin-bottom: 10vh;
   height:.5vh;
   width: 80%;
-  background:#232C33;
+  background:grey;
   border-bottom:1px solid white;
+  box-shadow: 0px 0px #1fc8db, 0px 0px #1fc8db, 0 0 #1fc8db, 0px 3px #1fc8db
+}
+
+.main-image {
+  box-shadow: 0 0 #1fc8db, 0 0 #1fc8db, 0 0 #1fc8db, 0 2px #1fc8db
+}
+
+strong {
+  color: #1fc8db;
 }
 
 h2 {

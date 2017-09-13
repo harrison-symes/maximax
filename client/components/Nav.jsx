@@ -47,7 +47,7 @@ export default class Nav extends React.Component {
           href="#"
           className="Nav-Icon nav-right nav-menu title"
           onClick={(e) => this.toggleNav(e)}>
-          {this.state.showNav ? '🗙' : '☰'}
+          {this.state.showNav ? <img className="jam-icon" src="./images/icons/angle-down.svg" /> : <img className="jam-icon" src="./images/icons/align-justify.svg" />}
         </a>
       </span>
     )

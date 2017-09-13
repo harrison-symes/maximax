@@ -15,10 +15,10 @@ const About = () => (
     </div>
     <div className="tile is-parent is-vertical is-6">
       <div className="tile is-child">
-        <img src="/images/fun.jpg"></img>
+        <img className="main-image" src="/images/fun.jpg"></img>
       </div>
       <div className="tile is-child">
-        <img src="/images/fun2.jpg"></img>
+        <img className="main-image" src="/images/fun2.jpg"></img>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@ const Trainer = () => (
   <div className="Trainer container has-text-centered tile is-anscestor">
     <div className="container tile is-parent is-vertical is-6 content">
       <div className="tile is-child level-left">
-        <img className="profile-image" src="/images/profile2.jpg"></img>
+        <img className="main-image profile-image" src="/images/profile2.jpg"></img>
       </div>
     </div>
     <div className="tile is-parent is-vertical is-6 content">

@@ -11493,12 +11493,12 @@ var About = function About() {
       _react2.default.createElement(
         'div',
         { className: 'tile is-child' },
-        _react2.default.createElement('img', { src: '/images/fun.jpg' })
+        _react2.default.createElement('img', { className: 'main-image', src: '/images/fun.jpg' })
       ),
       _react2.default.createElement(
         'div',
         { className: 'tile is-child' },
-        _react2.default.createElement('img', { src: '/images/fun2.jpg' })
+        _react2.default.createElement('img', { className: 'main-image', src: '/images/fun2.jpg' })
       )
     )
   );
@@ -11765,7 +11765,7 @@ var Home = function Home() {
         ),
         _react2.default.createElement(
           'h2',
-          { className: 'subtitle' },
+          { className: 'subtitle welcome-arrow' },
           _react2.default.createElement('img', { className: 'icon', src: '/images/icons/angle-down.svg' })
         )
       )
@@ -11974,7 +11974,7 @@ var Nav = function (_React$Component) {
             onClick: function onClick(e) {
               return _this3.toggleNav(e);
             } },
-          this.state.showNav ? '🗙' : '☰'
+          this.state.showNav ? _react2.default.createElement('img', { className: 'jam-icon', src: './images/icons/angle-down.svg' }) : _react2.default.createElement('img', { className: 'jam-icon', src: './images/icons/align-justify.svg' })
         )
       );
     }
@@ -12176,7 +12176,7 @@ var Trainer = function Trainer() {
       _react2.default.createElement(
         "div",
         { className: "tile is-child level-left" },
-        _react2.default.createElement("img", { className: "profile-image", src: "/images/profile2.jpg" })
+        _react2.default.createElement("img", { className: "main-image profile-image", src: "/images/profile2.jpg" })
       )
     ),
     _react2.default.createElement(
@@ -12265,7 +12265,7 @@ var Training = function Training() {
       _react2.default.createElement(
         'div',
         { className: 'tile is-child' },
-        _react2.default.createElement('img', { src: '/images/inPerson.jpg' })
+        _react2.default.createElement('img', { className: 'main-image', src: '/images/inPerson.jpg' })
       )
     ),
     _react2.default.createElement(

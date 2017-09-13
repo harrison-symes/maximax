@@ -13,7 +13,7 @@ const Training = () => (
         <h3 className="subtitle">Sessions start at <strong>$30</strong> for 30min.</h3>
       </div>
       <div className="tile is-child">
-        <img src="/images/inPerson.jpg"></img>
+        <img className="main-image" src="/images/inPerson.jpg"></img>
       </div>
     </div>
     <div className="tile is-parent is-vertical is-6">
